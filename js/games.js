@@ -1,6 +1,8 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
 import { getCartItems } from "./utils/getCartItems.js";
 
+
+
 export const url = "https://api.noroff.dev/api/v1/gamehub/";
 
 export const gameContainer = document.querySelector(".games-container");
@@ -14,6 +16,7 @@ const cartNumberOfItems = document.querySelector(".cart-status");
 const favorites = getExistingFavs();
 const currentCartItems = getCartItems();
 const dropdown = document.querySelector("select");
+
 
 
 async function getGames() {
