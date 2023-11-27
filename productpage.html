@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Game Hub - Product Page - Cyberpunk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Marte Lilleberre">
+  <meta name="dcterms.created" content="sat., 29 apr 2023 18:59:56 GMT">
+  <meta name="description"
+    content="Welcome to the products page, an in debth view of the game. See video, pictures, reviews and a game description">
+  <meta name="keywords" content="console games, playstation, xbox, nintendo, PC">
+  <script src="https://kit.fontawesome.com/1664c6557b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/game.js"></script>
+  <!-- Hotjar Tracking Code for https://gamehub-marte.netlify.app/ -->
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+      h._hjSettings = { hjid: 3741546, hjsv: 6 };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script'); r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <a href="index.html">
+      <img src="logo/GameHub_Logopink72.png" alt="Game Hub logo"></a>
+  </div>
+  <div class="welcomemessage">
+    <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
+  </div>
+  <div class="wrapper">
+    <div class="leftside">
+      <nav>
+        <a href="index.html" class="mobilelogo"><img class="small-logo" src="logo/GameHub_LogoNoslogan72.png"
+            alt="gamnehub logo home"></a>
+        <a href="profile.html" class="mobileprofile"><img class="profilevector" src="vector/profile.svg"
+            alt="profile icon">
+          My Profile</a>
+        <a href="cart.html" class="mobilecart">
+          <img class="cartvector" src="vector/cart.svg" alt="cart icon"> My
+          Cart</a>
+        <p class="cart-status"></p>
+        <a href="wishlist.html" class="mobilewishlist"><img class="wishlistvector" src="vector/wishlist.svg"
+            alt="wishlist icon">
+          My Wishlist</a>
+        <a href="about.html" class="mobileabout"><img class="aboutvector" src="vector/info.svg" alt="about icon">
+          About Us</a>
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="moretext"><i class="fas fa-bars fa-3x"></i>
+          <b>more</b></label>
+        <p>More</p>
+        <div class="hamburger-menu">
+          <h3>Hello, Marte</h3>
+          <a href="allgames.html">Games rated 3+</a>
+          <a href="rated16.html" class="ratedtwo">Games rated 16+</a>
+          <a href="rated18.html" class="ratedthree">Games rated 18+</a>
+          <a href="allgames.html">View all games</a>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Contact us</a>
+          <!-- <a href="#">Terms & Conditions</a> -->
+          <div class="smallestscreen">
+            <a href="profile.html">My profile page</a>
+            <a href="wishlist.html">My wishlist</a>
+          </div>
+          <a href="index.html" class="logout">Log out</a>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      <div class="topmenu">
+        <form action="#" class="searchbar">
+          <label for="searchbarinput"><b>search bar</b></label>
+          <input type="text" id="searchbarinput" placeholder="Search for games">
+          <button type="submit">
+            <img src="vector/search.svg" alt="search icon">
+          </button>
+        </form>
+
+        <!-- <div class="platforms">
+          <input type="checkbox" id="pc-checkbox">
+          <label for="pc-checkbox" class="labelname">
+            <img src="vector/pcmini.svg" alt="Browse games by PC">
+            PC
+          </label>
+          <div class="pc-menu">
+            <h4>Platforms</h4>
+            <hr>
+            <a href="productpage.html">
+              <img src="vector/windows.svg" alt="windows icon">
+              <p>Windows 11</p>
+            </a>
+          </div>
+
+          <input type="checkbox" id="ps-checkbox">
+          <label for="ps-checkbox" class="labelname">
+            <img src="vector/psmini.svg" alt="Browse games by PlayStation">
+            PlayStation
+          </label>
+          <div class="ps-menu">
+            <h4>Console</h4>
+            <hr>
+            <div class="consoles">
+              <div class="console-one">
+                <a href="productpage.html">
+                  <img src="vector/ps4.svg" alt="playstation 4 icon">
+                  <p>PS4</p>
+                </a>
+              </div>
+              <div class="console-two">
+                <a href="productpage.html">
+                  <img src="vector/ps5.svg" alt="playstation 5 icon">
+                  <p>PS5</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <input type="checkbox" id="xbox-checkbox">
+          <label for="xbox-checkbox" class="labelname">
+            <img src="vector/xboxmini.svg" alt="Browse games by Xbox">
+            Xbox
+          </label>
+          <div class="xbox-menu">
+            <h4>Console</h4>
+            <hr>
+            <div class="consoles">
+              <div class="console-one">
+                <a href="productpage.html">
+                  <img src="vector/xboxicon.svg" alt="xbox icon">
+                  <p>XBOX One</p>
+                </a>
+              </div>
+              <div class="console-two">
+                <a href="productpage.html">
+                  <img src="vector/xboxicon.svg" alt="xbox icon">
+                  <p>XBOX X</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <input type="checkbox" id="ns-checkbox">
+          <label for="ns-checkbox" class="labelname">
+            <img src="vector/nintendomini.svg" alt="Browse games by Nintendo">
+            Nintendo
+          </label>
+          <div class="ns-menu">
+            <h4>Console</h4>
+            <hr>
+            <a href="productpage.html">
+              <img src="vector/nintendoswitch.svg" alt="nintendo switch icon">
+              <p>Nintendo Switch</p>
+            </a>
+          </div>
+
+        </div> -->
+      </div>
+
+      <section class="breadcrumbs">
+        <h4>Site Navigation</h4>
+        <p>
+          <a href="index.html">Gamehub.com</a> >
+          <a href="allgames.html">All Games</a> >
+          <b class="breadcrumbspage"></b>
+        </p>
+      </section>
+      <!-- <div class="error" hidden></div> -->
+      <div class="productpagecontainer">
+        <div class="loader">Loading..</div>
+        <p class="addedtocart"></p>
+        <!-- <div class="productpage">
+          <div class="productquickinfo">
+            <img class="mainimg">
+            <h1></h1>
+            <p class="pp-p-one"></p>
+            <p class="availablefor"></p>
+            <p id="instantdownload"></p>
+            <h2></h2>
+            <p class="released"></p>
+          </div>
+          <div class="cartbuyheart">
+            <a href="cart.html" class="cart">
+              <img src="vector/cart.svg" alt="cart icon"></a>
+            <a href="checkout.html" class="buy">
+              <b>Buy Now</b>
+            </a>
+            <a href="wishlist.html" class="heart">
+              <img src="vector/wishlist.svg" alt="heart wishlist icon">
+            </a>
+          </div> -->
+        <!-- <div class="productquickinfo">
+            <img class="mainimg" src="zoom/GameHub_covers9-72-zoom.jpg" alt="cyberpunk cover photo">
+            <div class="pp-title-icons">
+              <h1>CYBERPUNK</h1>
+              <div class="pp-mobilevectors">
+                <a href="cart.html"><img src="vector/cart.svg" alt="cart icon"></a>
+                <a href="wishlist.html"><img src="vector/wishlist.svg" alt="heart wishlist icon"></a>
+              </div>
+            </div>
+            <p class="pp-p-one">
+              Welcome to the world of intense fighting video games! Get ready
+              to experience heart-pumping action and adrenaline-fueled battles
+              that will keep you on the edge of your seat.
+            </p>
+            <p>
+              <b>-Available for:</b> PS4, PS5, Nintendo Switch, XBOX One &
+              XBOX Series X
+            </p>
+            <p id="instantdownload">-Instant download</p>
+            <h2>Price: $35</h2>
+          </div>
+
+          <div class="cartbuyheart">
+            <a href="cart.html" class="cart">
+              <img src="vector/cart.svg" alt="cart icon"></a>
+            <a href="checkout.html" class="buy">
+              <b>Buy Now</b>
+            </a>
+            <a href="wishlist.html" class="heart">
+              <img src="vector/wishlist.svg" alt="heart wishlist icon">
+            </a>
+          </div>
+
+          <div class="description">
+            <h3>Description</h3>
+            <p>
+              Welcome to the world of intense fighting video games! Get ready
+              to experience heart-pumping action and adrenaline-fueled battles
+              that will keep you on the edge of your seat. In this game,
+              you'll choose your fighter from a diverse roster of characters,
+              each with their unique strengths and weaknesses.
+            </p>
+
+            <p>
+              As you step into the arena, you'll face off against opponents in
+              one-on-one battles, unleashing a variety of moves and combos to
+              take them down. From devastating punches and kicks to powerful
+              throws and special abilities, you'll need to master each of your
+              fighter's moves to emerge victorious.
+            </p>
+            <button id="toggle"><em>Read More</em></button>
+                                jacascript needed
+                            inspired by https://codepen.io/legendaryPower/pen/dvJQvB
+            <span id="text">
+              As you progress through the game, you'll face tougher opponents,
+              each with their unique fighting styles and strategies. You'll
+              need to be quick on your feet, anticipating your opponent's
+              moves and reacting with lightning-fast reflexes. In addition to
+              the main story mode, this game features a range of other modes
+              to keep you entertained, including arcade mode, time attack,
+              survival mode, and online multiplayer. Take on the best players
+              from around the world and climb the rankings to become the
+              ultimate champion. With stunning graphics, immersive sound
+              effects, and intuitive controls, this fighting game will keep
+              you coming back for more. Are you ready to enter the arena and
+              show your opponents what you're made of? The fight begins
+              now!</span>
+
+            <input type="checkbox" id="readmore-checkbox">
+            <label for="readmore-checkbox" class="label-readmore">
+              Read More
+            </label>
+            <div class="readmore">
+              <p>
+                As you progress through the game, you'll face tougher
+                opponents, each with their unique fighting styles and
+                strategies. You'll need to be quick on your feet, anticipating
+                your opponent's moves and reacting with lightning-fast
+                reflexes. In addition to the main story mode, this game
+                features a range of other modes to keep you entertained,
+                including arcade mode, time attack, survival mode, and online
+                multiplayer. Take on the best players from around the world
+                and climb the rankings to become the ultimate champion.
+              </p>
+
+              <p>
+                With stunning graphics, immersive sound effects, and intuitive
+                controls, this fighting game will keep you coming back for
+                more. Are you ready to enter the arena and show your opponents
+                what you're made of? The fight begins now!
+              </p>
+            </div>
+          </div>
+          <div class="visuals">
+            <h3>Visuals</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8X2kIfS6fb8"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+
+            <img class="img1" src="img/img1.jpg" alt="cyberpunk cover photo">
+            <img class="img2" src="img/img2.jpg" alt="cyberpunk cover photo">
+            <img class="img3" src="img/img3.jpg" alt="cyberpunk cover photo">
+          </div>
+          <div class="reviews">
+            <h3>Reviews</h3>
+            <img src="img/reviewmelissa.jpg" alt="game review by Melissa F.">
+            <img src="img/reviewjohn.jpg" alt="game review by John K.">
+          </div>
+        </div> -->
+      </div>
+      <!-- <div class="backtotop">
+          <a href="#top">Back to top</a>
+        </div> -->
+
+    </main>
+  </div>
+
+  <section class="testnewsletter">
+    <div class="newsletterall">
+      <div class="testnewslettertext">
+        <h4>
+          <b>Subscribe to our Newsletter to get 15% off your next order!</b>
+        </h4>
+        <p>
+          You’ll also be the first to know about new releases and special
+          offers.
+        </p>
+      </div>
+      <div class="input-container">
+        <div class="testnewsletterinput">
+          <label for="mail">Enter your email address:</label>
+          <input class="testinputemail" id="mail" type="email" placeholder="gamehub@test.com">
+        </div>
+        <button class="Subscribe" type="button">
+          <b>SUBSCRIBE</b>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="fleft">
+      <img src="vector/trustpilot.svg" alt="trustpilot">
+    </p>
+    <div class="fcenter">
+      <p>Follow us</p>
+      <div class="socials">
+        <img src="vector/facebook.svg" alt="facebook">
+        <img src="vector/twitter.svg" alt="twitter">
+        <img src="vector/instagram.svg" alt="instagram">
+        <img src="vector/twitch.svg" alt="twitch">
+      </div>
+
+      <p>Safe payment</p>
+      <img src="vector/klarna.svg" alt="klarna">
+      <img src="vector/mastercard.svg" alt="mastercard">
+      <img src="vector/visa.svg" alt="visa">
+      <img src="vector/paypal.svg" alt="paypal">
+      <p>
+        Copyright &copy; GAME HUB 2023<br>
+        All rights reserved
+      </p>
+    </div>
+    <div class="fright">
+      <ul>
+        <li class="dead-link">Terms & conditions</li>
+        <li class="dead-link">Privacy Policy</li>
+        <li><a href="contact.html">Contact us</a></li>
+        <!-- <li class="dead-link">FAQ</li> -->
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>

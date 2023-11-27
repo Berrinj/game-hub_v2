@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game Hub - All Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marte Lilleberre">
+    <meta name="dcterms.created" content="sat., 29 apr 2023 18:59:56 GMT">
+    <meta name="description" content="Welcome to the page where you can see all our games.">
+    <meta name="keywords" content="console games, playstation, xbox, nintendo, PC">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1664c6557b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/rated18.js"></script>
+    <!-- Hotjar Tracking Code for https://gamehub-marte.netlify.app/ -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 3741546, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="logo/GameHub_Logopink72.png" alt="Game Hub logo">
+    </div>
+    <div class="welcomemessage">
+        <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
+    </div>
+    <div class="wrapper">
+        <div class="leftside">
+            <nav>
+                <a href="index.html" class="mobilelogo"><img class="small-logo" src="logo/GameHub_LogoNoslogan72.png"
+                        alt="gamehub logo home"></a>
+                <a href="profile.html" class="mobileprofile"><img class="profilevector" src="vector/profile.svg"
+                        alt="profile icon">
+                    My Profile</a>
+                <a href="cart.html" class="mobilecart"><img class="cartvector" src="vector/cart.svg" alt="cart icon"> My
+                    Cart</a>
+                <p class="cart-status"></p>
+                <a href="wishlist.html" class="mobilewishlist"><img class="wishlistvector" src="vector/wishlist.svg"
+                        alt="wishlist icon">
+                    My Wishlist</a>
+                <a href="about.html" class="mobileabout"><img class="aboutvector" src="vector/info.svg"
+                        alt="about icon">
+                    About Us</a>
+                <input type="checkbox" id="menu-checkbox">
+                <label for="menu-checkbox" class="moretext"><i class="fas fa-bars fa-3x"></i>
+                    <b>More</b></label>
+                <p>More</p>
+
+                <div class="hamburger-menu">
+                    <h3>Hello, Marte</h3>
+                    <a href="allgames.html">Games rated 3+</a>
+                    <a href="rated16.html" class="ratedtwo">Games rated 16+</a>
+                    <a href="rated18.html" class="ratedthree">Games rated 18+</a>
+                    <a href="allgames.html">View all games</a>
+                    <a href="about.html">About us</a>
+                    <a href="contact.html">Contact us</a>
+                    <!-- <a href="#">Terms & Conditions</a> -->
+                    <div class="smallestscreen">
+                        <a href="profile.html">My profile page</a>
+                        <a href="wishlist.html">My wishlist</a>
+                    </div>
+                    <a href="index.html" class="logout">Log out</a>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <div class="topmenu">
+                <form action="#" class="searchbar">
+                    <label for="searchbarinput"><b>search bar</b></label>
+                    <input type="text" id="searchbarinput" placeholder="Search for games">
+                    <button type="submit">
+                        <img src="vector/search.svg" alt="search icon">
+                    </button>
+                </form>
+
+                <!-- <div class="platforms">
+                    <input type="checkbox" id="pc-checkbox">
+                    <label for="pc-checkbox" class="labelname">
+                        <img src="vector/pcmini.svg" alt="Browse games by PC">
+                        PC
+                    </label>
+                    <div class="pc-menu">
+                        <h4>Platforms</h4>
+                        <hr>
+                        <a href="productpage.html">
+                            <img src="vector/windows.svg" alt="windows icon">
+                            <p>Windows 11</p>
+                        </a>
+                    </div>
+
+                    <input type="checkbox" id="ps-checkbox">
+                    <label for="ps-checkbox" class="labelname">
+                        <img src="vector/psmini.svg" alt="Browse games by PlayStation">
+                        PlayStation
+                    </label>
+                    <div class="ps-menu">
+                        <h4>Console</h4>
+                        <hr>
+                        <div class="consoles">
+                            <div class="console-one">
+                                <a href="productpage.html">
+                                    <img src="vector/ps4.svg" alt="playstation 4 icon">
+                                    <p>PS4</p>
+                                </a>
+                            </div>
+                            <div class="console-two">
+                                <a href="productpage.html">
+                                    <img src="vector/ps5.svg" alt="playstation 5 icon">
+                                    <p>PS5</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="checkbox" id="xbox-checkbox">
+                    <label for="xbox-checkbox" class="labelname">
+                        <img src="vector/xboxmini.svg" alt="Browse games by Xbox">
+                        Xbox
+                    </label>
+                    <div class="xbox-menu">
+                        <h4>Console</h4>
+                        <hr>
+                        <div class="consoles">
+                            <div class="console-one">
+                                <a href="productpage.html">
+                                    <img src="vector/xboxicon.svg" alt="xbox icon">
+                                    <p>XBOX One</p>
+                                </a>
+                            </div>
+                            <div class="console-two">
+                                <a href="productpage.html">
+                                    <img src="vector/xboxicon.svg" alt="xbox icon">
+                                    <p>XBOX X</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="checkbox" id="ns-checkbox">
+                    <label for="ns-checkbox" class="labelname">
+                        <img src="vector/nintendomini.svg" alt="Browse games by Nintendo">
+                        Nintendo
+                    </label>
+                    <div class="ns-menu">
+                        <h4>Console</h4>
+                        <hr>
+                        <a href="productpage.html">
+                            <img src="vector/nintendoswitch.svg" alt="nintendo switch icon">
+                            <p>Nintendo Switch</p>
+                        </a>
+                    </div>
+
+                </div> -->
+            </div>
+
+            <div class="main-content">
+                <section class="breadcrumbs">
+                    <h4>Site Navigation</h4>
+                    <p>
+                        <a href="index.html">Gamehub.com</a> >
+                        <b>All Games 18+</b>
+                    </p>
+                </section>
+                <section class="cat">
+                    <h2>All games rated 18+</h2>
+                </section>
+                <div class="gamesrow">
+                    <div class="loader">Loading..</div>
+                    <!-- <div class="games-container">
+            <img class="productimg" src="" alt=""></a>
+            <h3 class="title"></h3>
+            <div class="price-box">
+              <h4></h4>
+            </div>
+          </div> -->
+                </div>
+            </div>
+            <div class="backtotop">
+                <a href="#top">Back to top</a>
+            </div>
+        </main>
+    </div>
+
+
+
+    <section class="testnewsletter">
+        <div class="newsletterall">
+            <div class="testnewslettertext">
+                <h4>Subscribe to our Newsletter to get 15% off your next order!</h4>
+                <p>
+                    You’ll also be the first to know about new releases and special
+                    offers.
+                </p>
+            </div>
+            <div class="input-container">
+                <div class="testnewsletterinput">
+                    <label for="mail">Enter your email address:</label>
+                    <input class="testinputemail" id="mail" type="email" placeholder="gamehub@test.com">
+                </div>
+                <button class="Subscribe" type="button">
+                    <b>SUBSCRIBE</b>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="fleft">
+            <img src="vector/trustpilot.svg" alt="trustpilot">
+        </p>
+        <div class="fcenter">
+            <p>Follow us</p>
+            <div class="socials">
+                <img src="vector/facebook.svg" alt="facebook">
+                <img src="vector/twitter.svg" alt="twitter">
+                <img src="vector/instagram.svg" alt="instagram">
+                <img src="vector/twitch.svg" alt="twitch">
+            </div>
+
+            <p>Safe payment</p>
+            <img src="vector/klarna.svg" alt="klarna">
+            <img src="vector/mastercard.svg" alt="mastercard">
+            <img src="vector/visa.svg" alt="visa">
+            <img src="vector/paypal.svg" alt="paypal">
+            <p>
+                Copyright &copy; GAME HUB 2023<br>
+                All rights reserved
+            </p>
+        </div>
+        <div class="fright">
+            <ul>
+                <li class="dead-link">Terms & conditions</li>
+                <li class="dead-link">Privacy Policy</li>
+                <li><a href="contact.html">Contact us</a></li>
+                <!-- <li class="dead-link">FAQ</li> -->
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- Search bar: https://www.youtube.com/watch?v=9hnJsNIBq1g -->
