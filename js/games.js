@@ -1,116 +1,186 @@
+import { GAMEHUB_API_URL } from "./common/commons.js";
 import { getExistingFavs } from "./utils/favFunctions.js";
 import { getCartItems } from "./utils/getCartItems.js";
+import { getProducts } from "./utils/getProducts.js";
+import { heartIconChange } from "./utils/heartIconChange.js";
 
 
 
-export const url = "https://api.noroff.dev/api/v1/gamehub/";
-
-export const gameContainer = document.querySelector(".games-container");
-
-export const gamesRow = document.querySelector(".gamesrow");
-
-export const priceBox = document.querySelector(".price-box");
-
+// export const url = "https://api.noroff.dev/api/v1/gamehub/";
+// export const gameContainer = document.querySelector(".games-container");
+// export const gamesRow = document.querySelector(".gamesrow");
+// export const priceBox = document.querySelector(".price-box");
 const main = document.querySelector("main");
-const cartNumberOfItems = document.querySelector(".cart-status");
+// const favButton = document.querySelectorAll(".games-container i");
+
 const favorites = getExistingFavs();
 const currentCartItems = getCartItems();
 const dropdown = document.querySelector("select");
 
+const cartNumberOfItems = document.querySelector(".cart-status");
+cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
 
 
-async function getGames() {
-
+function createProductCard(game) {
     try {
-    const response = await fetch(url);
-    const result = await response.json();
+    const productCard = document.createElement(`div`);
+    productCard.dataset.productId = game.id;
+    productCard.classList.add(`games-container`);
+    let saleMessage = "";
+    let cssClass = "far";
 
-    gamesRow.innerHTML = "";
-    
-
-    for(let i = 0; i < result.length; i++){
-        let saleFont = "";
-        let cssClass = "far";
-        let saleMessage = "";
-
-        if (result[i].onSale === true) {
-            result[i].price = result[i].discountedPrice;
-            // saleFont = "red";
-            saleMessage = "On sale!"
+    if (game.onSale === true) {
+        game.price = game.discountedPrice;
+        saleMessage = "On sale!";
         };
 
         const doesObjectExist = favorites.find(function(fav) {
-
-            return fav.id === result[i].id;
+         return fav.id === game.id;
         });
-
 
         if (doesObjectExist) {
             cssClass = "fa-solid";
         };
-        cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
 
-        gamesRow.innerHTML += `<div class="games-container">
-                                    <a href="productpage.html?id=${result[i].id}">
-                                    <img class="productimg" src="${result[i].image}">
-                                    <h3>${result[i].title}</h3>
-                                    <p>-Available for PS4, XBOX One and PC</p>
-                                    <p>-Instant download</p>
-                                    <div class="price-info">
-                                    <div class="price-box">
-                                    <h4 style="color: ${saleFont}">$${result[i].price}</h4>
-                                    </div>
-                                    <p class="on-sale-message">${saleMessage}</p>
-                                    </div>
-                                    </a>
-                                    <i class="${cssClass} fa-heart fa-2xl" data-id="${result[i].id}" data-name="${result[i].title}" data-image="${result[i].image}" data-price="${result[i].price}"></i>
-                                    </div>
-                                    `                 
-    };
-
-    const favButton = document.querySelectorAll(".games-container i");
-
-    favButton.forEach((button) => {
-        button.addEventListener("click", heartIconChange);
-    });
-
-    function heartIconChange() {
-        this.classList.toggle("fa-regular");
-        this.classList.toggle("fa-solid");
-        
-        const idLocalStorage = this.dataset.id;
-        const titleLocalStorage = this.dataset.name;
-        const imageLocalStorage = this.dataset.image;
-        const priceLocalStorage = this.dataset.price;
+    productCard.innerHTML = `   <a href="productpage.html?id=${game.id}">
+                                <img class="productimg" src="${game.image}">
+                                <h3>${game.title}</h3>
+                                <p>-Available for PS4, XBOX One and PC</p>
+                                <p>-Instant download</p>
+                                <p>Genre: ${game.genre}</p>
+                                <div class="price-info">
+                                <div class="price-box">
+                                <h4>$${game.price}</h4>
+                                </div>
+                                <p class="on-sale-message">${saleMessage}</p>
+                                </div>
+                                </a>
+                                <i class="${cssClass} fa-heart fa-2xl" data-id="${game.id}" data-name="${game.title}" data-image="${game.image}" data-price="${game.price}"></i>`
     
-        const currentFavs = getExistingFavs();
-
-        const productExists = currentFavs.find(function(fav) {
-            return fav.id === idLocalStorage;
-        });
-
-        if (!productExists) {
-            const product = {title: titleLocalStorage, id: idLocalStorage, image: imageLocalStorage, price: priceLocalStorage};
-            currentFavs.push(product);
-            saveFavorites(currentFavs);
-        } else {
-            const newFavs = currentFavs.filter((fav) => fav.id != idLocalStorage);
-            saveFavorites(newFavs);
-        };
-
-    }
-
-    getExistingFavs();
-    
-    function saveFavorites(favs) {
-        localStorage.setItem("favorites", JSON.stringify(favs));
-    };
-    
-
+    return productCard;
     } catch (error) {
         main.innerHTML = `<div class="error">We are so sorry, an error occured while loading this page.</div>`;
         console.log(error, `Sorry, an error occured`);
-    };
-};
+}
+}
 
-getGames();
+export async function renderProducts() {
+   const games = await getProducts(GAMEHUB_API_URL); 
+   const gameContainer = document.querySelector(".gamesrow");
+   gameContainer.innerHTML = ``;
+
+    games.forEach((game) => {
+        const productCard = createProductCard(game);
+        gameContainer.appendChild(productCard);
+    });
+
+    const favButton = document.querySelectorAll(".games-container i");
+    favButton.forEach((button) => {
+        button.addEventListener("click", heartIconChange);
+    });
+    getExistingFavs();
+
+
+}
+
+renderProducts();
+
+
+
+
+
+// async function getGames() {
+
+//     try {
+//     const response = await fetch(url);
+//     const result = await response.json();
+
+//     gamesRow.innerHTML = "";
+    
+
+//     for(let i = 0; i < result.length; i++){
+//         let saleFont = "";
+//         let cssClass = "far";
+//         let saleMessage = "";
+
+//         if (result[i].onSale === true) {
+//             result[i].price = result[i].discountedPrice;
+//             // saleFont = "red";
+//             saleMessage = "On sale!"
+//         };
+
+//         const doesObjectExist = favorites.find(function(fav) {
+
+//             return fav.id === result[i].id;
+//         });
+
+
+//         if (doesObjectExist) {
+//             cssClass = "fa-solid";
+//         };
+//         cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
+
+//         gamesRow.innerHTML += `<div class="games-container">
+//                                     <a href="productpage.html?id=${result[i].id}">
+//                                     <img class="productimg" src="${result[i].image}">
+//                                     <h3>${result[i].title}</h3>
+//                                     <p>-Available for PS4, XBOX One and PC</p>
+//                                     <p>-Instant download</p>
+//                                     <div class="price-info">
+//                                     <div class="price-box">
+//                                     <h4 style="color: ${saleFont}">$${result[i].price}</h4>
+//                                     </div>
+//                                     <p class="on-sale-message">${saleMessage}</p>
+//                                     </div>
+//                                     </a>
+//                                     <i class="${cssClass} fa-heart fa-2xl" data-id="${result[i].id}" data-name="${result[i].title}" data-image="${result[i].image}" data-price="${result[i].price}"></i>
+//                                     </div>
+//                                     `                 
+//     };
+
+//     const favButton = document.querySelectorAll(".games-container i");
+
+//     favButton.forEach((button) => {
+//         button.addEventListener("click", heartIconChange);
+//     });
+
+    // function heartIconChange() {
+    //     this.classList.toggle("fa-regular");
+    //     this.classList.toggle("fa-solid");
+        
+    //     const idLocalStorage = this.dataset.id;
+    //     const titleLocalStorage = this.dataset.name;
+    //     const imageLocalStorage = this.dataset.image;
+    //     const priceLocalStorage = this.dataset.price;
+    
+    //     const currentFavs = getExistingFavs();
+
+    //     const productExists = currentFavs.find(function(fav) {
+    //         return fav.id === idLocalStorage;
+    //     });
+
+    //     if (!productExists) {
+    //         const product = {title: titleLocalStorage, id: idLocalStorage, image: imageLocalStorage, price: priceLocalStorage};
+    //         currentFavs.push(product);
+    //         saveFavorites(currentFavs);
+    //     } else {
+    //         const newFavs = currentFavs.filter((fav) => fav.id != idLocalStorage);
+    //         saveFavorites(newFavs);
+    //     };
+
+    // }
+
+//     getExistingFavs();
+    
+//     function saveFavorites(favs) {
+//         localStorage.setItem("favorites", JSON.stringify(favs));
+//     };
+    
+
+//     } catch (error) {
+//         main.innerHTML = `<div class="error">We are so sorry, an error occured while loading this page.</div>`;
+//         console.log(error, `Sorry, an error occured`);
+//     };
+// };
+
+// getGames();

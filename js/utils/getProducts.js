@@ -4,4 +4,5 @@ export async function getProducts(apiUrl) {
     return result;
     }
 
+
     

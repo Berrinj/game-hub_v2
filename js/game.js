@@ -50,7 +50,7 @@ async function getGame() {
                                         <img class="mainimg" src="${result.image}" alt="${result.title} cover photo">
                                         <h1>${result.title}</h1>
                                         <p class="pp-p-one">${result.description}</p>
-                                        <p class="availablefor">-Available for: PS4, PS5, Nintendo Switch, XBOX One & XBOX Series X</p>
+                                        <p class="availablefor">Genre: ${result.genre}</p>
                                         <p id="instantdownload">-Instant download</p>
                                         <p class="released">Released: ${result.released}</p>
                                         <h2 style="color: ${saleFont}">Price: $${result.price}</h2>
