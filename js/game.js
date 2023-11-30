@@ -1,5 +1,9 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
 import { getCartItems } from "./utils/getCartItems.js";
+import { GAMEHUB_API_URL } from "./common/commons.js";
+import { getProducts } from "./utils/getProducts.js";
+import { heartIconChange } from "./utils/heartIconChange.js";
+import { cartIconChange } from "./utils/cartIconChange.js";
 
 
 const queryString = document.location.search;
@@ -8,13 +12,14 @@ const id = params.get("id");
 
 const breadcrumbsPage = document.querySelector(".breadcrumbspage");
 
-const url = "https://api.noroff.dev/api/v1/gamehub/" + id;
+const url =`${GAMEHUB_API_URL}/${id}`;
 const main = document.querySelector("main");
 const productContainer = document.querySelector(".productpagecontainer");
 const cartNumberOfItems = document.querySelector(".cart-status");
 
 const favorites = getExistingFavs();
 const currentCartItems = getCartItems();
+
 
 async function getGame() {
     try {
@@ -71,103 +76,14 @@ async function getGame() {
 // Cart icon
         const cartButton = document.querySelector(".productpagecontainer i.fa-cart-shopping");
         cartButton.addEventListener("click", cartIconChange);
-        const cartIconColor = document.querySelector(".fa-cart-shopping");
-        const goToCartButton = document.querySelector(".buy");
-
-        function cartIconChange() {
-
-            const idLocalStorage = this.dataset.id;
-            const titleLocalStorage = this.dataset.name;
-            const imageLocalStorage = this.dataset.image;
-            const priceLocalStorage = this.dataset.price;
-
-            const currentCartItems = getCartItems();
-
-            const productExists = currentCartItems.find(function(cart) {
-                return cart.id === idLocalStorage;
-            });
-
-            
-            if (!productExists) {
-                const product = {title: titleLocalStorage, id: idLocalStorage, image: imageLocalStorage, price: priceLocalStorage};
-                currentCartItems.push(product);
-                saveCartItem(currentCartItems);
-
-                cartIconColor.style.color = "green";
-                goToCartButton.innerHTML = "<b>Added!</b>";
-                cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
-
-                setTimeout(() => {
-                    cartIconColor.style.color = "";
-                    goToCartButton.innerHTML = "<b>Go to cart</b>";
-                }, 2000);
-
-            } else {
-                const newcartItem = currentCartItems.filter((cart) => cart.id !== idLocalStorage);
-                saveCartItem(newcartItem);
-                goToCartButton.innerHTML = "<b>Removed.</b>";
-                cartIconColor.style.color = "red";
-
-                setTimeout(() => {
-                    cartIconColor.style.color = "";
-                    goToCartButton.innerHTML = "<b>Go to cart</b>";
-                }, 2000);
-
-            };
-
-        };
-
+        
         getCartItems();
 
-        function saveCartItem(incart) {
-            localStorage.setItem("incart", JSON.stringify(incart));
-        };
-
-
-//Favorite icon // tried import export but here I just couldn't make it work.
         const favButton = document.querySelectorAll(".productpagecontainer i.fa-heart");
         favButton.forEach((button) => {
             button.addEventListener("click", heartIconChange);
         });
-                            
-        function heartIconChange() {
-
-            this.classList.toggle("fa-regular");
-            this.classList.toggle("fa-solid");
-     
-            
-            
-            const idLocalStorage = this.dataset.id;
-            const titleLocalStorage = this.dataset.name;
-            const imageLocalStorage = this.dataset.image;
-            const priceLocalStorage = this.dataset.price;
-
-
-        
-            const currentFavs = getExistingFavs();
-
-        
-        
-            const productExists = currentFavs.find(function(fav) {
-                return fav.id === idLocalStorage;
-            });
-
-            if (!productExists) {
-                const product = {title: titleLocalStorage, id: idLocalStorage, image: imageLocalStorage, price: priceLocalStorage};
-                currentFavs.push(product);
-                saveFavorites(currentFavs);
-            } else {
-                const newFavs = currentFavs.filter((fav) => fav.id !== idLocalStorage);
-                saveFavorites(newFavs);
-            };
-        
-        };
-        
         getExistingFavs();
-
-        function saveFavorites(favs) {
-            localStorage.setItem("favorites", JSON.stringify(favs));
-        };
 
 
 } catch(error) {
@@ -180,3 +96,59 @@ getGame();
 
 
 
+// function CreateProductInfo(game) {
+//     const productInfo = document.createElement(`div`);
+//     productInfo.classList.add(`product-page-container`);
+//     let cssClass = "far";
+//     let saleFont = "";
+//     cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
+
+//     if (game.onSale === true) {
+//         game.price = game.discountedPrice;
+//         saleFont = "red";
+//     };
+
+//     const doesObjectExist = favorites.find(function(fav) {
+//         return fav.id === game.id;
+//     });
+
+//     if (doesObjectExist) {
+//         cssClass = "fa-solid";
+//     };
+
+//     productInfo.innerHTML = `
+//                     <img class="mainimg" src="${game.image}" alt="${game.title} cover photo">
+//                     <h1>${game.title}</h1>
+//                     <p class="pp-p-one">${game.description}</p>
+//                     <p class="availablefor">Genre: ${game.genre}</p>
+//                     <p id="instantdownload">-Instant download</p>
+//                     <p class="released">Released: ${game.released}</p>
+//                     <h2 style="color: ${saleFont}">Price: $${game.price}</h2>
+//                     <div class="cartbuyheart">
+//                     <button class="cart">
+//                     <i class="fa-solid fa-cart-shopping fa-2xl" 
+//                     data-id="${game.id}" 
+//                     data-name="${game.title}" 
+//                     data-image="${game.image}" 
+//                     data-price="${game.price}">
+//                     </i>
+//                     </button>
+//                     <a href="cart.html" class="buy">
+//                     <b>Go to cart</b>
+//                     </a>
+//                     <button class="heart">
+//                     <i class="${cssClass} fa-heart fa-2xl gameheart" data-id="${game.id}" data-name="${game.title}" data-image="${game.image}" data-price="${game.price}"></i>
+//                     </button>
+//                 </div>
+//                 `;
+//     return productInfo;
+// }
+
+// export async function renderProduct() {
+//     const game = await getProducts(url); 
+//     const productContainer = document.querySelector(".productpagecontainer");
+//     productContainer.innerHTML = ``;
+ 
+//  }
+ 
+//  renderProduct();

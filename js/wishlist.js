@@ -31,10 +31,9 @@ favorites.forEach(favorite => {
                                             <h2>${favorite.title}</h2>
                                         </div>
                                         
-                                        <p>
-                                            -Available for PS4, PS5, Nintendo Switch, XBOX One & XBOX
-                                            Series X -Instant download
-                                        </p>
+                                        <p>-Available for PS4, PS5, Nintendo Switch, XBOX One & XBOX
+                                            Series X </p>
+                                        <p>-Instant download</p>
                                         <h3>Price: ${favorite.price}</h3>
                                     </div></li>`
 

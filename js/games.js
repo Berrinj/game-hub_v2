@@ -9,7 +9,7 @@ import { heartIconChange } from "./utils/heartIconChange.js";
 // export const url = "https://api.noroff.dev/api/v1/gamehub/";
 // export const gameContainer = document.querySelector(".games-container");
 // export const gamesRow = document.querySelector(".gamesrow");
-// export const priceBox = document.querySelector(".price-box");
+export const priceBox = document.querySelector(".price-box");
 const main = document.querySelector("main");
 // const favButton = document.querySelectorAll(".games-container i");
 
@@ -41,7 +41,8 @@ function createProductCard(game) {
         if (doesObjectExist) {
             cssClass = "fa-solid";
         };
-
+        
+        
     productCard.innerHTML = `   <a href="productpage.html?id=${game.id}">
                                 <img class="productimg" src="${game.image}">
                                 <h3>${game.title}</h3>
@@ -59,8 +60,8 @@ function createProductCard(game) {
     
     return productCard;
     } catch (error) {
-        main.innerHTML = `<div class="error">We are so sorry, an error occured while loading this page.</div>`;
-        console.log(error, `Sorry, an error occured`);
+        main.innerHTML = `<div class="error">We are so sorry, an error occurred while loading this page.</div>`;
+        console.log(error, `Sorry, an error occurred`);
 }
 }
 
