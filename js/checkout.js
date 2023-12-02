@@ -21,11 +21,10 @@ if(itemsInCart.length === 0) {
 let total = 0;
 itemsInCart.forEach(inCart => {
 
-productContainer.innerHTML += `<div class="checkout-items">
+productContainer.innerHTML += `<div class="checkout-item">
                                 <img src="${inCart.image}" alt="${inCart.title} cover" class="checkout-img">
                                 <p><b>Title:</b>${inCart.title}</p>
                                 <p><b>Price:</b>${inCart.price}</p>
-                                <hr>
                                 </div>`;
 
     let itemPrice = +inCart.price;

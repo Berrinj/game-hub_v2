@@ -1,10 +1,9 @@
 import { GAMEHUB_API_URL } from "./common/commons.js";
 import { getExistingFavs } from "./utils/favFunctions.js";
+import { sortGames } from "./utils/filterGames.js";
 import { getCartItems } from "./utils/getCartItems.js";
 import { getProducts } from "./utils/getProducts.js";
 import { heartIconChange } from "./utils/heartIconChange.js";
-
-
 
 // export const url = "https://api.noroff.dev/api/v1/gamehub/";
 // export const gameContainer = document.querySelector(".games-container");
@@ -15,11 +14,15 @@ const main = document.querySelector("main");
 
 const favorites = getExistingFavs();
 const currentCartItems = getCartItems();
-const dropdown = document.querySelector("select");
 
 const cartNumberOfItems = document.querySelector(".cart-status");
 cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
 
+let selectSortBy = document.querySelector("#sort-games-by");
+selectSortBy.addEventListener("change", function() {
+    sortGames();
+    renderProducts(selectSortBy.value);
+});
 
 function createProductCard(game) {
     try {
@@ -28,6 +31,7 @@ function createProductCard(game) {
     productCard.classList.add(`games-container`);
     let saleMessage = "";
     let cssClass = "far";
+
 
     if (game.onSale === true) {
         game.price = game.discountedPrice;
@@ -65,9 +69,26 @@ function createProductCard(game) {
 }
 }
 
-export async function renderProducts() {
-   const games = await getProducts(GAMEHUB_API_URL); 
+
+export async function renderProducts(selectedValue = "3+") {
+   let games = await getProducts(GAMEHUB_API_URL); 
+   console.log("Games Data:", games);
    const gameContainer = document.querySelector(".gamesrow");
+
+if (selectedValue !== "3+") {
+    if (selectedValue === "16+") {
+        games = games.filter((game) => game.ageRating === selectedValue);
+    } else if (selectedValue === "18+") {
+        games = games.filter((game) => game.ageRating === selectedValue);
+    } else if (selectedValue === "onSale"){
+        games = games.filter((game) => game.onSale);
+    } else {
+         games = games.filter((game) => game.genre === selectedValue);
+    }
+   }
+    
+    console.log("Games Data (After Filtering):", games);
+
    gameContainer.innerHTML = ``;
 
     games.forEach((game) => {
@@ -80,13 +101,26 @@ export async function renderProducts() {
         button.addEventListener("click", heartIconChange);
     });
     getExistingFavs();
-
-
 }
 
+// export async function renderProducts() {
+//     const games = await getProducts(GAMEHUB_API_URL); 
+//     const gameContainer = document.querySelector(".gamesrow");
+//     gameContainer.innerHTML = ``;
+ 
+//      games.forEach((game) => {
+//          const productCard = createProductCard(game);
+//          gameContainer.appendChild(productCard);
+//      });
+ 
+//      const favButton = document.querySelectorAll(".games-container i");
+//      favButton.forEach((button) => {
+//          button.addEventListener("click", heartIconChange);
+//      });
+//      getExistingFavs();
+//  }
+
 renderProducts();
-
-
 
 
 

@@ -101,6 +101,11 @@ nav a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 25px;
+}
+
+.hamburger-menu a {
+  margin-bottom: 0;
 }
 
 .small-logo {
@@ -114,7 +119,7 @@ nav a {
 .wishlistvector,
 .aboutvector,
 .fas.fa-bars {
-  padding-top: 28px;
+  /* padding-top: 28px; */
   display: block;
   height: 35px;
   margin-bottom: 5px;
@@ -135,7 +140,7 @@ nav p {
 }
 
 .cart-status {
-  padding: 5px;
+  padding: 1px;
   font-style: italic;
 }
 
@@ -694,6 +699,7 @@ footer .fcenter img {
   margin-top: 34px;
   border-radius: 5px;
   border: 1px solid rgb(168, 167, 167);
+  box-shadow: 3px 5px 18px #bac5cf;
 }
 
 .mainimg {
@@ -751,8 +757,6 @@ footer .fcenter img {
   grid-template-rows: 50px minmax(80px, auto) 0px;
   align-items: center;
   margin: 0 auto;
-  box-shadow: 3px 5px 18px #bac5cf;
-
 }
 
 .pp-p-one {
@@ -1006,7 +1010,7 @@ li {
 }
 
 .shopping-cart-header h1,
-h4 {
+.shopping-cart-header h4 {
   margin-bottom: 0;
 }
 
@@ -1049,10 +1053,13 @@ h4 {
 
 .deleteitem {
   display: flex;
+  align-items: center;
   /* justify-content: flex-end; */
+  text-align: left;
   font-style: italic;
   cursor: pointer;
   gap: 5px;
+  width: fit-content;
 }
 
 .promocodefield {
@@ -1174,7 +1181,7 @@ hr {
   text-align: left;
   max-width: 465px;
   margin: auto;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
 }
 
 .checkout-cart h4 {
@@ -1191,6 +1198,14 @@ hr {
   display: contents;
 }
 
+.checkout-item {
+  /* margin-bottom: 10px; */
+  padding: 5px;
+  border: 1px solid rgb(168, 167, 167);
+  margin-bottom: 5px;
+  box-shadow: 3px 5px 18px #bac5cf;
+}
+
 .checkout-img {
   width: 70px;
   float: left;
@@ -1202,12 +1217,16 @@ hr {
 }
 
 .checkout-total {
-  text-align: end;
+  /* text-align: end; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 20px;
 }
 
-.checkout-total h4 {
-  /* text-decoration: underline; */
-  margin-bottom: 4px;
+.checkout-total h4,
+.checkout-total p {
+  margin-bottom: 2px;
 }
 
 .remove-item {
@@ -1328,7 +1347,7 @@ input[type] {
 }
 
 .testnewslettertext p,
-h4 {
+.testnewslettertext h4 {
   margin: 0;
 }
 
@@ -1540,6 +1559,7 @@ fieldset button {
   max-width: 840px;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
@@ -1555,11 +1575,21 @@ fieldset button {
   margin-top: 30px;
 }
 
+.profilecontent h1 {
+  text-align: center;
+}
+
 .profile-menu {
   display: flex;
-  max-width: 400px;
-  min-width: 290px;
+  flex-wrap: wrap;
+  /* max-width: 400px;
+  min-width: 290px; */
   justify-content: space-around;
+  gap: 10px;
+}
+
+.profile-menu p {
+  margin-top: 0;
 }
 
 /*TESTTESTTEST*/
@@ -1567,7 +1597,7 @@ fieldset button {
   display: flex;
   padding: 16px 10% 16px 10%;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .input-container {
@@ -1950,6 +1980,7 @@ fieldset button {
 
   .cartinfo {
     padding-left: 2px;
+    display: flex;
   }
 
   .gotopayment {
