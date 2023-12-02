@@ -453,7 +453,7 @@ p.promo-p-two {
 .gamesrow {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding-left: 10%;
   padding-right: 10%;
@@ -781,7 +781,7 @@ footer .fcenter img {
   align-items: center;
   justify-content: center;
   gap: 2px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-top: 20px;
   grid-column: 2;
   grid-row: 7;
@@ -828,6 +828,12 @@ footer .fcenter img {
 .released {
   display: grid;
   grid-column: 1;
+  grid-row: 9;
+  text-align: center;
+}
+
+.added-to-cart {
+  grid-column: 2;
   grid-row: 9;
   text-align: center;
 }
@@ -1491,7 +1497,7 @@ fieldset button {
 .wishlistgames {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin-bottom: 44px;
   padding-bottom: 20px;
@@ -1573,6 +1579,7 @@ fieldset button {
   border-radius: 50%;
   justify-content: center;
   margin-top: 30px;
+  border: 1px solid black;
 }
 
 .profilecontent h1 {
@@ -1590,6 +1597,25 @@ fieldset button {
 
 .profile-menu p {
   margin-top: 0;
+}
+
+.login-button {
+  background-color: #cfa7a5;
+  color: #000;
+  border-radius: 7px;
+  text-align: center;
+  padding: 7px;
+  cursor: pointer;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.login-button:hover {
+  background-color: #b68b89;
+}
+
+.login-form {
+  max-width: 300px;
 }
 
 /*TESTTESTTEST*/

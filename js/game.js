@@ -69,7 +69,8 @@ async function getGame() {
                                         <button class="heart">
                                         <i class="${cssClass} fa-heart fa-2xl gameheart" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
                                         </button>
-                                    </div>
+                                        </div>
+                                    <p class="added-to-cart"></p>
                                     </div>
                                 </div>`;
 

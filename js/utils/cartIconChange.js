@@ -4,6 +4,7 @@ export function cartIconChange() {
     const cartIconColor = document.querySelector(".fa-cart-shopping");
     const goToCartButton = document.querySelector(".buy");
     const cartNumberOfItems = document.querySelector(".cart-status");
+    const addedToCart = document.querySelector(".added-to-cart");
 
     const idLocalStorage = this.dataset.id;
     const titleLocalStorage = this.dataset.name;
@@ -23,23 +24,27 @@ export function cartIconChange() {
         saveCartItem(currentCartItems);
 
         cartIconColor.style.color = "green";
-        goToCartButton.innerHTML = "<b>Added!</b>";
+        // goToCartButton.innerHTML = "<b>Added!</b>";
+        addedToCart.innerHTML = "<i>Added to cart</i>";
         cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
 
         setTimeout(() => {
             cartIconColor.style.color = "";
-            goToCartButton.innerHTML = "<b>Go to cart</b>";
+            addedToCart.innerHTML = "";
+            // goToCartButton.innerHTML = "<b>Go to cart</b>";
         }, 2000);
 
     } else {
         const newcartItem = currentCartItems.filter((cart) => cart.id !== idLocalStorage);
         saveCartItem(newcartItem);
-        goToCartButton.innerHTML = "<b>Removed.</b>";
+        addedToCart.innerHTML = "<i>Removed from cart</i>";
+        // goToCartButton.innerHTML = "<b>Removed.</b>";
         cartIconColor.style.color = "red";
 
         setTimeout(() => {
             cartIconColor.style.color = "";
-            goToCartButton.innerHTML = "<b>Go to cart</b>";
+            addedToCart.innerHTML = "";
+            // goToCartButton.innerHTML = "<b>Go to cart</b>";
         }, 2000);
 
     };
