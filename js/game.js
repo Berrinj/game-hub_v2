@@ -52,8 +52,8 @@ async function getGame() {
     breadcrumbsPage.innerHTML += `<b class="breadcrumbspage">${result.title}</b>`;
     productContainer.innerHTML += `<div class"productpagecontainer">
                                     <div class="productquickinfo">
-                                        <img class="mainimg" src="${result.image}" alt="${result.title} cover photo">
                                         <h1>${result.title}</h1>
+                                        <img class="mainimg" src="${result.image}" alt="${result.title} cover photo">
                                         <p class="pp-p-one">${result.description}</p>
                                         <p class="availablefor">Genre: ${result.genre}</p>
                                         <p id="instantdownload">-Instant download</p>

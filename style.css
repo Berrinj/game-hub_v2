@@ -1690,6 +1690,10 @@ fieldset button {
     z-index: 1000;
   }
 
+  nav a {
+    margin-bottom: 0;
+  }
+
   .fas.fa-bars {
     margin: 0;
     padding-left: 20px;
@@ -1775,6 +1779,16 @@ fieldset button {
   .platform-heading {
     width: 100%;
     justify-content: center;
+    margin: 0;
+  }
+
+  .platforms p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .platforms img {
+    height: 25px;
   }
 
   /* .labelname p {
@@ -1874,10 +1888,10 @@ fieldset button {
   }
 
   .productpagecontainer h1 {
-    align-self: flex-start;
-    margin-top: 10px;
-    padding-left: 5%;
-    margin: 0;
+    /* align-self: flex-start; */
+    /* margin-top: 10px; */
+    /* padding-left: 5%; */
+    margin: 10px 0 10px 0;
   }
 
   .pp-title-icons {
