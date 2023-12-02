@@ -102,7 +102,7 @@
         </div>
         <fieldset>
           <legend>Enter payment info:</legend>
-          <form action="confirmation.html" method="#">
+          <form action="confirmation.html" method="#" class="checkout-form">
             <ul>
               <li>
                 <label for="name">Name on card:</label>
@@ -110,12 +110,13 @@
               </li>
               <li>
                 <label for="cardnumber">Card number</label>
-                <input type="number" id="cardnumber" name="card_number" placeholder="xxxx xxxx xxxx xxxx"
-                  class="card-number" required>
+                <input type="text" id="cardnumber" name="card_number" minlength="16" maxlength="16"
+                  placeholder="xxxx xxxx xxxx xxxx" class="card-number" required>
               </li>
               <li>
                 <label for="experationdate">Expiration date:</label>
-                <input type="number" id="experationdate" name="card_experation" placeholder="MM/YY">
+                <input type="text" id="experationdate" name="card_experation" required minlength="5" maxlength="5"
+                  placeholder="MM/YY">
                 <label for="cvc">CVC:</label>
                 <input type="text" id="cvc" name="card_cvc" required minlength="3" maxlength="3" placeholder="xxx">
               </li>

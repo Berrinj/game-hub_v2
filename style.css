@@ -408,7 +408,8 @@ p.promo-p-two {
 
 .promo-readmore-button:hover {
   scale: 110%;
-  background-color: #a1817f;
+  /* background-color: #a1817f; */
+
 }
 
 .promobanner {
@@ -1931,6 +1932,10 @@ fieldset button {
     margin-left: 0;
   }
 
+  .added-to-cart {
+    text-align: center;
+  }
+
   .description h3 {
     margin-left: 5%;
   }
@@ -1981,6 +1986,12 @@ fieldset button {
   .cart {
     /* flex-wrap: wrap; */
     flex-direction: column;
+  }
+
+  .buy:hover,
+  .cart:hover,
+  .heart:hover {
+    background-color: #cfa7a5;
   }
 
   .buy {
