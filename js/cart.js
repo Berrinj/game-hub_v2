@@ -1,5 +1,8 @@
 import { getCartItems } from "./utils/getCartItems.js";
 import { handleRemoveButtonClick } from "./utils/removebutton.js";
+import { subscriptionThanks } from "./utils/subscribeButton.js";
+const subscribeButton = document.querySelector(".subscribe");
+subscribeButton.addEventListener("click", subscriptionThanks);
 
 const itemsInCart = getCartItems();
 const main = document.querySelector("main");

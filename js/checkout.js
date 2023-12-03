@@ -1,4 +1,7 @@
 import { getCartItems } from "./utils/getCartItems.js";
+import { subscriptionThanks } from "./utils/subscribeButton.js";
+const subscribeButton = document.querySelector(".subscribe");
+subscribeButton.addEventListener("click", subscriptionThanks);
 
 const main = document.querySelector("main");
 const productContainer = document.querySelector(".checkout-items");
@@ -7,6 +10,8 @@ const totalSum =  document.querySelector(".checkout-total");
 const cartNumberOfItems = document.querySelector(".cart-status");
 const currentCartItems = getCartItems();
 const checkoutButton = document.querySelector("#placeorder");
+const checkoutForm = document.querySelector(".checkout-form");
+
 
 productContainer.innerHTML = "";
 

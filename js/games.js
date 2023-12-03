@@ -4,7 +4,10 @@ import { sortGames } from "./utils/filterGames.js";
 import { getCartItems } from "./utils/getCartItems.js";
 import { getProducts } from "./utils/getProducts.js";
 import { heartIconChange } from "./utils/heartIconChange.js";
+import { subscriptionThanks } from "./utils/subscribeButton.js";
 
+const subscribeButton = document.querySelector(".subscribe");
+subscribeButton.addEventListener("click", subscriptionThanks);
 // export const url = "https://api.noroff.dev/api/v1/gamehub/";
 // export const gameContainer = document.querySelector(".games-container");
 // export const gamesRow = document.querySelector(".gamesrow");
@@ -17,6 +20,9 @@ const currentCartItems = getCartItems();
 
 const cartNumberOfItems = document.querySelector(".cart-status");
 cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
+
+
+
 
 let selectSortBy = document.querySelector("#sort-games-by");
 selectSortBy.addEventListener("change", function() {

@@ -4,6 +4,9 @@ import { GAMEHUB_API_URL } from "./common/commons.js";
 import { getProducts } from "./utils/getProducts.js";
 import { heartIconChange } from "./utils/heartIconChange.js";
 import { cartIconChange } from "./utils/cartIconChange.js";
+import { subscriptionThanks } from "./utils/subscribeButton.js";
+const subscribeButton = document.querySelector(".subscribe");
+subscribeButton.addEventListener("click", subscriptionThanks);
 
 
 const queryString = document.location.search;

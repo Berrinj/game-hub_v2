@@ -1,5 +1,8 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
 import { getCartItems } from "./utils/getCartItems.js";
+import { subscriptionThanks } from "./utils/subscribeButton.js";
+const subscribeButton = document.querySelector(".subscribe");
+subscribeButton.addEventListener("click", subscriptionThanks);
 
 const favorites = getExistingFavs();
 

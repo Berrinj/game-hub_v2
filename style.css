@@ -1386,6 +1386,11 @@ input[type] {
   margin-bottom: 16px;
 }
 
+.subscribe:hover {
+  background-color: #272e55;
+
+}
+
 .testinputemail {
   height: 41px;
   width: 365px;
