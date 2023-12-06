@@ -1,5 +1,5 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
-import { getCartItems } from "./utils/getCartItems.js";
+import { updateCartStatus } from "./utils/updateCartStatus.js";
 import { subscriptionThanks } from "./utils/subscribeButton.js";
 const subscribeButton = document.querySelector(".subscribe");
 subscribeButton.addEventListener("click", subscriptionThanks);
@@ -9,13 +9,12 @@ const favorites = getExistingFavs();
 const main = document.querySelector("main");
 const favoritesContainer = document.querySelector(".wishlistgames");
 const noMoreItems = document.querySelector(".nomoreitems");
-const cartNumberOfItems = document.querySelector(".cart-status");
-
-const currentCartItems = getCartItems();
 
 try {
 
-    cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
+    window.addEventListener("resize", updateCartStatus);
+
+    updateCartStatus();
 
 if(favorites.length === 0) {
     favoritesContainer.innerHTML = `<p class="nofavs">No favorites to show here.</p>`

@@ -1,5 +1,6 @@
 import { getCartItems } from "./utils/getCartItems.js";
 import { subscriptionThanks } from "./utils/subscribeButton.js";
+import { updateCartStatus } from "./utils/updateCartStatus.js";
 const subscribeButton = document.querySelector(".subscribe");
 subscribeButton.addEventListener("click", subscriptionThanks);
 
@@ -17,7 +18,10 @@ productContainer.innerHTML = "";
 
 try {
 
-    cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
+window.addEventListener("resize", updateCartStatus);
+
+updateCartStatus();
+
 
 if(itemsInCart.length === 0) {
     productContainer.innerHTML = `<p>No items in cart.</p>`;

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game Hub - Register new profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marte Lilleberre">
+    <meta name="dcterms.created" content="sat., 29 apr 2023 18:59:56 GMT">
+    <meta name="description"
+        content="Game Hub register page. Here you can sign up for our site to see your purchases and more">
+    <meta name="keywords"
+        content="console games, playstation, xbox, nintendo, PC, sign up, wishlist, order history, profile">
+    <script src="https://kit.fontawesome.com/1664c6557b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/profile.js" type="module"></script>
+    <!-- Hotjar Tracking Code for Game Hub v2 -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 3773860, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html">
+            <img src="logo/GameHub_Logopink72.png" alt="Game Hub logo"></a>
+    </div>
+    <div class="welcomemessage">
+        <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
+    </div>
+    <div class="wrapper">
+        <div class="leftside">
+            <nav>
+
+                <a href="index.html" class="mobilelogo"><img class="small-logo" src="logo/GameHub_LogoNoslogan72.png"
+                        alt="gamehub logo home"></a>
+                <a href="profile.html" class="mobileprofile"><img class="profilevector" src="vector/profile.svg"
+                        alt="profile icon">
+                    <p class="nav-name">My Profile</p>
+                </a>
+                <a href="cart.html" class="mobilecart"><img class="cartvector" src="vector/cart.svg" alt="cart icon">
+                    <p class="nav-name">My Cart</p>
+                    <p class="cart-status"></p>
+                </a>
+                <a href="wishlist.html" class="mobilewishlist"><img class="wishlistvector" src="vector/wishlist.svg"
+                        alt="wishlist icon">
+                    <p class="nav-name">My Wishlist</p>
+                </a>
+                <a href="about.html" class="mobileabout"><img class="aboutvector" src="vector/info.svg"
+                        alt="about icon">
+                    <p class="nav-name">About Us</p>
+                </a>
+                <input type="checkbox" id="menu-checkbox">
+                <label for="menu-checkbox" class="moretext"><i class="fas fa-bars fa-3x"></i>
+                    <b>more</b></label>
+                <p class="menu-more">More</p>
+                <div class="hamburger-menu">
+                    <h3>Hello, Guest</h3>
+                    <a href="about.html">About us</a>
+                    <a href="contact.html">Contact us</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                    <div class="smallestscreen">
+                        <a href="profile.html">My profile page</a>
+                        <a href="wishlist.html">My wishlist</a>
+                    </div>
+                    <a href="index.html" class="logout">Log out</a>
+                </div>
+            </nav>
+        </div>
+        <main>
+            <div class="topmenu">
+                <form action="#" class="searchbar">
+                    <label for="searchbarinput"><b>search bar</b></label>
+                    <input type="text" id="searchbarinput" placeholder="Search for games">
+                    <button type="submit">
+                        <img src="vector/search.svg" alt="search icon">
+                    </button>
+                </form>
+
+
+            </div>
+
+            <section class="breadcrumbs">
+                <h4>Site Navigation</h4>
+                <p><a href="index.html">Gamehub.com</a> > <a href="profile.html">My profile page</a> > <b>Register</b>
+                </p>
+            </section>
+            <div class="profilecontent">
+
+                <div class="signup-intro">
+                    <h1>Create your Game Hub user</h1>
+                    <h3></h3>
+                </div>
+                <div class="signup-form-container">
+                    <button class="google-signup">Sign up with Google</button>
+                    <button class="email-signup">Sign up with email</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <section class="testnewsletter">
+        <div class="newsletterall">
+            <div class="testnewslettertext">
+                <h4>
+                    <b>Subscribe to our Newsletter to get 15% off your next order!</b>
+                </h4>
+                <p>
+                    You’ll also be the first to know about new releases and special
+                    offers.
+                </p>
+            </div>
+            <div class="input-container">
+                <div class="testnewsletterinput">
+                    <label for="mail">Enter your email address:</label>
+                    <input class="testinputemail" id="mail" type="email" placeholder="gamehub@test.com">
+                </div>
+                <button class="subscribe" type="button">
+                    <b>SUBSCRIBE</b>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="fleft">
+            <img src="vector/trustpilot.svg" alt="trustpilot">
+        </p>
+        <div class="fcenter">
+            <p>Follow us</p>
+            <div class="socials">
+                <img src="vector/facebook.svg" alt="facebook">
+                <img src="vector/twitter.svg" alt="twitter">
+                <img src="vector/instagram.svg" alt="instagram">
+                <img src="vector/twitch.svg" alt="twitch">
+            </div>
+
+            <p>Safe payment</p>
+            <img src="vector/klarna.svg" alt="klarna">
+            <img src="vector/mastercard.svg" alt="mastercard">
+            <img src="vector/visa.svg" alt="visa">
+            <img src="vector/paypal.svg" alt="paypal">
+            <p>
+                Copyright &copy; GAME HUB 2023<br>
+                All rights reserved
+            </p>
+        </div>
+        <div class="fright">
+            <ul>
+                <li><a href="terms-and-conditions.html">Terms & conditions</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <!-- <li class="dead-link">FAQ</li> -->
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

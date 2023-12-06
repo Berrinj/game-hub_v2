@@ -1,4 +1,5 @@
 import { getExistingFavs } from "./favFunctions.js";
+
 export  function heartIconChange() {
     this.classList.toggle("fa-regular");
     this.classList.toggle("fa-solid");
@@ -13,7 +14,7 @@ export  function heartIconChange() {
     const productExists = currentFavs.find(function(fav) {
         return fav.id === idLocalStorage;
     });
-
+    const heartIconColor = document.querySelector(".fa-heart.gameheart");
     if (!productExists) {
         const product = {
             title: titleLocalStorage, 
@@ -23,9 +24,16 @@ export  function heartIconChange() {
         };
         currentFavs.push(product);
         saveFavorites(currentFavs);
+
+        heartIconColor.style.color = "red";
+
+        setTimeout(() => {
+            heartIconColor.style.color = "";
+        }, 2000);
     } else {
         const newFavs = currentFavs.filter((fav) => fav.id != idLocalStorage);
         saveFavorites(newFavs);
+        heartIconColor.style.color = "";
     };
 
 }

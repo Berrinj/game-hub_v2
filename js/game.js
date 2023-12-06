@@ -5,8 +5,12 @@ import { getProducts } from "./utils/getProducts.js";
 import { heartIconChange } from "./utils/heartIconChange.js";
 import { cartIconChange } from "./utils/cartIconChange.js";
 import { subscriptionThanks } from "./utils/subscribeButton.js";
+import { updateCartStatus } from "./utils/updateCartStatus.js";
 const subscribeButton = document.querySelector(".subscribe");
 subscribeButton.addEventListener("click", subscriptionThanks);
+
+window.addEventListener("resize", updateCartStatus);
+updateCartStatus();
 
 
 const queryString = document.location.search;
@@ -18,10 +22,8 @@ const breadcrumbsPage = document.querySelector(".breadcrumbspage");
 const url =`${GAMEHUB_API_URL}/${id}`;
 const main = document.querySelector("main");
 const productContainer = document.querySelector(".productpagecontainer");
-const cartNumberOfItems = document.querySelector(".cart-status");
 
 const favorites = getExistingFavs();
-const currentCartItems = getCartItems();
 
 
 async function getGame() {
@@ -50,7 +52,6 @@ async function getGame() {
         cssClass = "fa-solid";
     };
 
-    cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
 
     breadcrumbsPage.innerHTML += `<b class="breadcrumbspage">${result.title}</b>`;
     productContainer.innerHTML += `<div class"productpagecontainer">
@@ -90,14 +91,13 @@ async function getGame() {
         getExistingFavs();
 
 
+
 } catch(error) {
     main.innerHTML = `<div class="error">We are so sorry, an error occured while loading this page.</div>`;
     console.log(error, `Sorry, an error occured`);
 }
 };
 getGame();
-
-
 
 
 // function CreateProductInfo(game) {

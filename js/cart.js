@@ -1,6 +1,8 @@
 import { getCartItems } from "./utils/getCartItems.js";
 import { handleRemoveButtonClick } from "./utils/removebutton.js";
 import { subscriptionThanks } from "./utils/subscribeButton.js";
+import { updateCartStatus } from "./utils/updateCartStatus.js";
+
 const subscribeButton = document.querySelector(".subscribe");
 subscribeButton.addEventListener("click", subscriptionThanks);
 
@@ -15,11 +17,15 @@ const currentCartItems = getCartItems();
 
 
 try {
-    cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
+  window.addEventListener("resize", updateCartStatus);
+
+  updateCartStatus();  
 
     cartContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("deleteitem")) {
           handleRemoveButtonClick(event);
+          updateCartStatus();
+          
         }
       });
 cartContainer.innerHTML = "";
@@ -29,7 +35,7 @@ if(itemsInCart.length === 0) {
 };
 
 
-cartHeader.innerHTML += `<h1>Cart</h1>
+cartHeader.innerHTML = `<h1>Cart</h1>
                         <h4>${itemsInCart.length} item(s)</h4>`;
 
 let total = 0;

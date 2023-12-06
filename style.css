@@ -140,7 +140,7 @@ nav p {
 }
 
 .cart-status {
-  padding: 1px;
+  /* padding: 1px; */
   font-style: italic;
 }
 
@@ -1567,7 +1567,7 @@ fieldset button {
 /* PROFILE */
 
 .profilecontent {
-  height: 1000px;
+  height: fit-content;
   max-width: 840px;
   margin: auto;
   display: flex;
@@ -1576,9 +1576,13 @@ fieldset button {
   align-items: center;
   background-color: #fff;
   margin-top: 34px;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  box-shadow: 3px 5px 18px #bac5cf;
 }
 
-.profilepic {
+.profilepic,
+.profile-pic-example-user {
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -1586,6 +1590,10 @@ fieldset button {
   justify-content: center;
   margin-top: 30px;
   border: 1px solid black;
+}
+
+.profile-pic-example-user {
+  display: none;
 }
 
 .profilecontent h1 {
@@ -1622,6 +1630,39 @@ fieldset button {
 
 .login-form {
   max-width: 300px;
+}
+
+.forgotten-password {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0;
+}
+
+/*  REGISTER */
+.signup-intro {
+  text-align: center;
+}
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signup-form-container button {
+  width: 190px;
+  height: 50px;
+  border-radius: 6px;
+}
+
+.google-signup {
+  background-color: #4285F4;
+  color: white;
+}
+
+.email-signup {
+  background-color: darkblue;
+  color: white;
 }
 
 /*TESTTESTTEST*/
@@ -1705,7 +1746,7 @@ fieldset button {
     padding-left: 20px;
   }
 
-  nav p {
+  .menu-more {
     display: none;
   }
 
@@ -1736,30 +1777,38 @@ fieldset button {
     margin-bottom: 0;
   }
 
+  .nav-name {
+    font-size: 0;
+  }
+
   .mobileprofile {
     order: 2;
-    font-size: 0;
   }
 
   .mobilecart {
     order: 5;
-    margin-right: 4%;
-    font-size: 0;
+    margin-right: 20px;
   }
 
   .mobilewishlist {
     order: 4;
-    font-size: 0;
   }
 
   .mobilemore {
     order: 1;
     margin-left: 4%;
-    font-size: 0;
   }
 
   a.mobileabout {
     display: none;
+  }
+
+  .cart-status {
+    color: white;
+    position: absolute;
+    padding: 5px;
+    top: 18px;
+    right: 28px;
   }
 
   main {

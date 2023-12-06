@@ -5,6 +5,7 @@ import { getCartItems } from "./utils/getCartItems.js";
 import { getProducts } from "./utils/getProducts.js";
 import { heartIconChange } from "./utils/heartIconChange.js";
 import { subscriptionThanks } from "./utils/subscribeButton.js";
+import { updateCartStatus } from "./utils/updateCartStatus.js";
 
 const subscribeButton = document.querySelector(".subscribe");
 subscribeButton.addEventListener("click", subscriptionThanks);
@@ -13,14 +14,14 @@ subscribeButton.addEventListener("click", subscriptionThanks);
 // export const gamesRow = document.querySelector(".gamesrow");
 export const priceBox = document.querySelector(".price-box");
 const main = document.querySelector("main");
+
 // const favButton = document.querySelectorAll(".games-container i");
 
 const favorites = getExistingFavs();
-const currentCartItems = getCartItems();
 
-const cartNumberOfItems = document.querySelector(".cart-status");
-cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
+window.addEventListener("resize", updateCartStatus);
 
+updateCartStatus();
 
 
 
