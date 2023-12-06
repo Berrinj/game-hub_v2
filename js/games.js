@@ -110,6 +110,7 @@ if (selectedValue !== "3+") {
     getExistingFavs();
 }
 
+
 // export async function renderProducts() {
 //     const games = await getProducts(GAMEHUB_API_URL); 
 //     const gameContainer = document.querySelector(".gamesrow");

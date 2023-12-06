@@ -1,6 +1,8 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
 import { updateCartStatus } from "./utils/updateCartStatus.js";
 import { subscriptionThanks } from "./utils/subscribeButton.js";
+import { heartIconChange } from "./utils/heartIconChange.js";
+import { RemoveWishlistItem } from "./utils/removeWishButton.js";
 const subscribeButton = document.querySelector(".subscribe");
 subscribeButton.addEventListener("click", subscriptionThanks);
 
@@ -16,16 +18,34 @@ try {
 
     updateCartStatus();
 
+    favoritesContainer.addEventListener("click", function (event) {
+        if (event.target.classList.contains("trash")) {
+          RemoveWishlistItem(event);
+          updateCartStatus();
+          
+        }
+      });
+
 if(favorites.length === 0) {
-    favoritesContainer.innerHTML = `<p class="nofavs">No favorites to show here.</p>`
-    noMoreItems.innerHTML = `<p class="nofavs">No favorites to show here. Go add some and spoil yourself, you deserve it!</p>`;
+    // favoritesContainer.innerHTML = `<p class="nofavs">No favorites to show here.</p>`
+    noMoreItems.innerHTML = `<p class="nofavs">No favorites to show here. <a href="index.html">Go add some</a> and spoil yourself, you deserve it!</p>`;
 };
+
 
 favoritesContainer.innerHTML = "";
 
 favorites.forEach(favorite => {
+    let cssClass = "far";
+
+const doesObjectExist = favorites.find(function(fav) {
+    return fav.id === favorite.id;
+   });
+
+   if (doesObjectExist) {
+       cssClass = "fa-solid";
+   };
     
-    favoritesContainer.innerHTML += `<li><div class="wishlist1">
+    favoritesContainer.innerHTML += `<li><div class="wishlist1" data-game-id="${favorite.id}">
                                         <a href="productpage.html?id=${favorite.id}">
                                         <img src="${favorite.image}">
                                         </a>
@@ -37,11 +57,17 @@ favorites.forEach(favorite => {
                                             Series X </p>
                                         <p>-Instant download</p>
                                         <h3>Price: ${favorite.price}</h3>
+                                        <button class="trash"><i class="fa-regular fa-trash-can"></i> Remove item</button>
                                     </div></li>`
 
                                     // <button class="wishlist-button add-item-cart">Add to cart</button>
                                     // <button class="delete-wishlist-button">Remove item</button>
-
+//fav icon
+const favButton = document.querySelectorAll(".wishlistpagecontainer i.fa-heart");
+    favButton.forEach((button) => {
+        button.addEventListener("click", heartIconChange);
+    });
+    getExistingFavs();
 
 
 });

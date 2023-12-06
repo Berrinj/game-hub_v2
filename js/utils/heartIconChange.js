@@ -25,15 +25,15 @@ export  function heartIconChange() {
         currentFavs.push(product);
         saveFavorites(currentFavs);
 
-        heartIconColor.style.color = "red";
+        this.style.color = "red";
 
         setTimeout(() => {
-            heartIconColor.style.color = "";
+            this.style.color = "";
         }, 2000);
     } else {
         const newFavs = currentFavs.filter((fav) => fav.id != idLocalStorage);
         saveFavorites(newFavs);
-        heartIconColor.style.color = "";
+        this.style.color = "";
     };
 
 }
