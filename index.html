@@ -80,7 +80,7 @@
         <form action="#" class="searchbar">
           <label for="searchbarinput"><b>search bar</b></label>
           <input type="text" id="searchbarinput" placeholder="Search for games">
-          <button type="submit">
+          <button type="submit" aria-label="Search button" title="Search button">
             <i class="fa-solid fa-magnifying-glass fa-xl"></i>
           </button>
         </form>
@@ -135,14 +135,13 @@
       <div class="promobanner">
         <p>Check out all our games on sale, is your favorite there? Filter below for easy access</p>
       </div>
-      <section class="breadcrumbs">
+      <!-- <section class="breadcrumbs">
         <h4>Site Navigation</h4>
         <p>
           <a href="index.html">Gamehub.com</a>
-          <!-- ><a href="allgames.html">All Games</a> > -->
           <b class="breadcrumbspage"></b>
         </p>
-      </section>
+      </section> -->
       <section class="cat">
         <h2>All games</h2>
         <div class="filter-buttons">
@@ -150,8 +149,9 @@
           <div class="option-inputs">
             <select name="sort-games-by" id="sort-games-by">
               <option value="3+">All games</option>
-              <option value="16+">Rated 16+</option>
-              <option value="18+">Rated 18+</option>
+              <option value="12+">Rated 12</option>
+              <option value="16+">Rated 16</option>
+              <option value="18+">Rated 18</option>
               <option value="Sports">Sports</option>
               <option value="Horror">Horror</option>
               <option value="Action">Action</option>

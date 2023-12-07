@@ -25,6 +25,16 @@ updateCartStatus();
 
 if(itemsInCart.length === 0) {
     productContainer.innerHTML = `<p>No items in cart.</p>`;
+    checkoutButton.classList.add("disabled-button");
+    checkoutButton.addEventListener("click", function (event) {
+        event.preventDefault();
+});
+} else {
+  checkoutButton.classList.remove("disabled-button");
+    checkoutButton.removeEventListener("click", function (event) {
+        event.preventDefault();
+        updateCartStatus(); 
+    });
 };
 
 let total = 0;

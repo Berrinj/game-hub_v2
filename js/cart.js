@@ -11,6 +11,7 @@ const main = document.querySelector("main");
 const cartHeader = document.querySelector(".shopping-cart-header");
 const cartContainer = document.querySelector(".shopping-cart");
 const totalSum =  document.querySelector(".total");
+const checkoutButton = document.querySelector(".gotopaymentbutton");
 const deleteItem = document.querySelectorAll("p.deleteitem");
 const cartNumberOfItems = document.querySelector(".cart-status");
 const currentCartItems = getCartItems();
@@ -20,6 +21,8 @@ try {
   window.addEventListener("resize", updateCartStatus);
 
   updateCartStatus();  
+
+  
 
     cartContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("deleteitem")) {
@@ -32,8 +35,17 @@ cartContainer.innerHTML = "";
 
 if(itemsInCart.length === 0) {
     cartContainer.innerHTML = `<p class="nofavs">No items in cart.</p>`
+    checkoutButton.classList.add("disabled-button");
+    checkoutButton.addEventListener("click", function (event) {
+        event.preventDefault();
+});
+} else {
+  checkoutButton.classList.remove("disabled-button");
+    checkoutButton.removeEventListener("click", function (event) {
+        event.preventDefault();
+        updateCartStatus(); 
+    });
 };
-
 
 cartHeader.innerHTML = `<h1>Cart</h1>
                         <h4>${itemsInCart.length} item(s)</h4>`;
@@ -44,7 +56,7 @@ itemsInCart.forEach(inCart => {
 
     cartContainer.innerHTML += `<li>
                                         <div class="cartItem-container" data-game-id="${inCart.id}">
-                                        <a href="productpage.html?id=${inCart.id}">
+                                        <a href="productpage.html?id=${inCart.id}" aria-label="product link" title="product link">
                                         <div class="cartinfo">
                                         <img src="${inCart.image}" alt="${inCart.title} cover"></a>
                                         <h2>${inCart.title}</h2>

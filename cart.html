@@ -37,19 +37,19 @@
       <nav>
         <a href="index.html" class="mobilelogo"><img class="small-logo" src="logo/GameHub_LogoNoslogan72.png"
             alt="gamehub logo home"></a>
-        <a href="profile.html" class="mobileprofile"><i class="fa-solid fa-user f profilevector" alt="profile icon"></i>
+        <a href="profile.html" class="mobileprofile"><i class="fa-solid fa-user f profilevector"></i>
           <p class="nav-name">My Profile</p>
         </a>
-        <a href="cart.html" class="mobilecart"><i class="fa-solid fa-cart-shopping  cartvector"></i>
+        <a href="cart.html" class="mobilecart"><i class="fa-solid fa-cart-shopping cartvector"></i>
           <p class="nav-name">My Cart</p>
           <p class="cart-status"></p>
         </a>
         <a href="wishlist.html" class="mobilewishlist">
-          <i class="fa-solid fa-heart  wishlistvector" alt="wishlist icon"></i>
+          <i class="fa-solid fa-heart  wishlistvector"></i>
           <p class="nav-name">My Wishlist</p>
         </a>
         <a href="about.html" class="mobileabout">
-          <i class="fa-solid fa-circle-info aboutvector" alt="about icon"></i>
+          <i class="fa-solid fa-circle-info aboutvector"></i>
           <p class="nav-name">About Us</p>
         </a>
         <input type="checkbox" id="menu-checkbox">
@@ -74,26 +74,28 @@
       <div class="welcomemessage">
         <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
       </div>
-      <a href="index.html" class="continue-shopping"><img src="vector/arrowleft.svg" alt="arrow">
-        <p>Continue shopping</p>
-      </a>
-      <div class="progress">
-        <b>Shopping Cart</b>
-        <div class="mobilearrow">></div>
-        <img src="vector/dottetlinearrow.svg" alt="arrow">
-        Checkout
-        <div class="mobilearrow">></div>
-        <img src="vector/dottetlinearrow.svg" alt="arrow">
-        Confirmation
-      </div>
-      <div class="shopping-cart-header">
-        <!-- <h1>Cart</h1> -->
-        <!-- <h4>1 item</h4> -->
-      </div>
-      <hr>
-      <div class="shopping-cart">
-        <div class="loader">Loading..</div>
-        <!-- <a href="productpage.html"><img src="Games/GameHub_covers9-72.jpg" alt="Cyberpunk cover"></a>
+      <div class="shopping-cart-container universal-container">
+        <a href="index.html" class="continue-shopping"><i class="fa-solid fa-arrow-left-long"></i>
+          <p>Continue shopping</p>
+        </a>
+        <div class="progress">
+          <b>Shopping Cart</b>
+          <div class="mobilearrow">></div>
+          <img src="vector/dottetlinearrow.svg" alt="arrow">
+          Checkout
+          <div class="mobilearrow">></div>
+          <img src="vector/dottetlinearrow.svg" alt="arrow">
+          Confirmation
+        </div>
+
+        <div class="shopping-cart-header">
+          <!-- <h1>Cart</h1> -->
+          <!-- <h4>1 item</h4> -->
+        </div>
+        <hr>
+        <div class="shopping-cart">
+          <div class="loader">Loading..</div>
+          <!-- <a href="productpage.html"><img src="Games/GameHub_covers9-72.jpg" alt="Cyberpunk cover"></a>
         <div class="cartinfo">
           <h2>Cyberpunk</h2>
           <p>
@@ -102,26 +104,26 @@
           <p>-Instant download</p>
           <p class="price">$35.00</p>
         </div> -->
-        <p class="deleteitem"></p>
-      </div>
-      <hr>
-      <div class="total">
-        <h3></h3>
-        <h3></h3>
-      </div>
-      <div class="promocodefield">
-        <input type="checkbox" id="promo-checkbox">
-        <label for="promo-checkbox" class="promocodetext">Do you have a promo code?</label>
-        <div class="promocode">
-          <input type="text" name="promocode" id="promocode-input" placeholder="Enter code here">
-          <button type="submit" id="promocode-button">Activate</button>
+          <p class="deleteitem"></p>
         </div>
-      </div>
+        <hr>
+        <div class="total">
+        </div>
+        <div class="promocodefield">
+          <input type="checkbox" id="promo-checkbox">
+          <label for="promo-checkbox" class="promocodetext">Do you have a promo code?</label>
+          <div class="promocode">
+            <label for="promocode-input">Code:</label>
+            <input type="text" name="promocode" id="promocode-input" placeholder="Enter code here">
+            <button type="submit" id="promocode-button">Activate</button>
+          </div>
+        </div>
 
-      <div class="gotopayment">
-        <a href="checkout.html" class="gotopaymentbutton">
-          <b>Go to payment</b>
-        </a>
+        <div class="gotopayment">
+          <a href="checkout.html" class="gotopaymentbutton">
+            <b>Go to payment</b>
+          </a>
+        </div>
       </div>
     </main>
   </div>

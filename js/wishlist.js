@@ -47,7 +47,7 @@ const doesObjectExist = favorites.find(function(fav) {
     
     favoritesContainer.innerHTML += `<li><div class="wishlist1" data-game-id="${favorite.id}">
                                         <a href="productpage.html?id=${favorite.id}">
-                                        <img src="${favorite.image}">
+                                        <img src="${favorite.image}" alt="${favorite.image} product image">
                                         </a>
                                         <div class="nameheart">
                                             <h2>${favorite.title}</h2>

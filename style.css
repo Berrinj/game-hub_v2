@@ -5,7 +5,9 @@
   --sidebar-bg: #a1ca77;
   --topmenu-bg: #a1ca77;
   --body-bg: #f6f6f6;
+  --body-bg-dark: #121212;
   --dark-green: #779b54;
+  --container-bg: #f6f6f6;
 }
 
 
@@ -50,6 +52,7 @@
 .loader {
   font-size: 2rem;
   margin: auto;
+  color: var(--body-bg);
   /* border: 16px solid #f3f3f3;
   border-top: 16px solid darkslategray;
   border-radius: 50%;
@@ -90,7 +93,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: var(--body-bg);
+  background-color: var(--body-bg-dark);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -100,6 +103,7 @@ body {
 
 main {
   width: 100%;
+  min-height: 600px;
 }
 
 main .cat {
@@ -110,6 +114,12 @@ main .cat {
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
+  background-color: var(--dark-green);
+  margin-bottom: 50px;
+}
+
+.cat h2 {
+  color: var(--main-color-two);
 }
 
 nav {
@@ -439,6 +449,7 @@ p.promo-p-two {
   border: none;
   padding: 7px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .promo-readmore-button:hover {
@@ -450,7 +461,8 @@ p.promo-p-two {
 .promobanner {
   width: 100%;
   background-color: var(--main-color-two);
-  box-shadow: 0 4px 2px -2px var(--dark-green);
+  box-shadow: 0 -4px 2px -2px var(--dark-green);
+  border-bottom: 1px solid var(--main-color-one);
 }
 
 .promobanner p {
@@ -472,6 +484,10 @@ p.promo-p-two {
   justify-content: center;
   gap: 10px;
   margin: 10px 0 10px 0;
+}
+
+.filter-buttons label {
+  color: var(--main-color-two);
 }
 
 .filter-buttons p {
@@ -501,9 +517,9 @@ p.promo-p-two {
 
 .games-container {
   gap: 10px 68px;
-  box-shadow: 1px 2px 2px 2px #bac5cf;
+  /* box-shadow: 1px 2px 10px var(--dark-green); */
   margin-bottom: 10px;
-  background-color: #fff;
+  background-color: var(--container-bg);
 }
 
 .games-container:hover {
@@ -522,6 +538,12 @@ a:active {
   margin: 0px 8px;
 }
 
+select#sort-games-by {
+  padding: 10px;
+  border-radius: 7px;
+  background-color: var(--main-color-one);
+  color: var(--main-color-two);
+}
 
 
 
@@ -644,7 +666,7 @@ a:active {
 }
 
 .backtotop a {
-  color: var(--main-color-two);
+  color: var(--body-bg);
   text-decoration: none;
 }
 
@@ -723,7 +745,8 @@ footer .fcenter img {
   text-align: center;
   font-size: 0.75rem;
   font-family: arial;
-  margin-top: 20px;
+  padding-top: 1px;
+  color: var(--main-color-two);
 }
 
 .breadcrumbs a {
@@ -740,13 +763,22 @@ footer .fcenter img {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 840px;
-  background: #fff;
+  background: var(--container-bg);
   margin: auto;
   margin-bottom: 30px;
   margin-top: 34px;
   border-radius: 5px;
   border: 1px solid rgb(168, 167, 167);
-  box-shadow: 3px 5px 18px #bac5cf;
+  /* box-shadow: 1px 2px 10px var(--dark-green); */
+}
+
+.universal-container {
+  max-width: 840px;
+  background: var(--container-bg);
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 34px;
+  border-radius: 5px;
 }
 
 .mainimg {
@@ -1035,6 +1067,7 @@ footer .fcenter img {
 
 .continue-shopping {
   display: flex;
+  align-items: center;
   margin-left: 10%;
   gap: 10px;
   color: var(--main-color-two);
@@ -1042,11 +1075,13 @@ footer .fcenter img {
 
 .progress {
   text-align: center;
-}
-
-.progress a {
   color: var(--main-color-two);
 }
+
+/* .progress a,
+.progress b {
+  color: var(--body-bg);
+} */
 
 .progress ul,
 li {
@@ -1195,13 +1230,18 @@ li {
   margin-bottom: 40px;
   width: 361px;
   height: 50px;
-  float: right;
+  margin: auto;
   border-radius: 7px;
 }
 
 .gotopaymentbutton:hover {
   background-color: var(--dark-green);
   cursor: pointer;
+}
+
+.disabled-button {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .total {
@@ -1347,6 +1387,9 @@ input[type] {
 
 #placeorder {
   background-color: var(--main-color-one);
+  padding: 10px;
+  width: 150px;
+  border-radius: 10px;
 }
 
 /* .placeorder {
@@ -1522,24 +1565,24 @@ fieldset button {
 }
 
 .emailbox a:hover {
-  color: #e6d2d1;
+  color: var(--dark-green)
 }
 
 .contactinfo img {
   margin: 0 25px 15px 25px;
 }
 
+.submit-form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 /* WISHLIST */
 
 .wishlistpagecontainer {
-  max-width: 840px;
   min-height: 400px;
-  background-color: #fff;
-  margin: auto;
-  margin-top: 34px;
-  margin-bottom: 30px;
-  border-radius: 5px;
-  box-shadow: 3px 5px 18px #bac5cf;
+  /* box-shadow: 1px 2px 10px var(--dark-green); */
 }
 
 .wishlistpagecontainer>p {
@@ -1657,17 +1700,18 @@ fieldset button {
 
 .profilecontent {
   height: fit-content;
-  max-width: 840px;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
-  margin-top: 34px;
   padding-bottom: 40px;
-  margin-bottom: 60px;
-  box-shadow: 3px 5px 18px #bac5cf;
+  /* box-shadow: 1px 2px 10px var(--dark-green); */
+}
+
+.shopping-cart-container {
+  height: fit-content;
+  padding-bottom: 40px;
+  /* box-shadow: 1px 2px 10px var(--dark-green); */
 }
 
 .profilepic,
@@ -1714,7 +1758,7 @@ fieldset button {
 }
 
 .login-button:hover {
-  background-color: #b68b89;
+  background-color: var(--dark-green);
 }
 
 .login-form {
@@ -1828,6 +1872,16 @@ fieldset button {
 
   nav a {
     margin-bottom: 0;
+  }
+
+  .universal-container {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .productpagecontainer {
+    margin-bottom: 0;
+    border-radius: 0;
   }
 
   .backtotop {
@@ -2022,7 +2076,7 @@ fieldset button {
   .fright {
     width: 100%;
     text-align: center;
-    background-color: #bac5cf;
+    background-color: var(--dark-green);
     order: 1;
     color: var(--main-color-two);
     margin: 0;
@@ -2040,7 +2094,7 @@ fieldset button {
   /*PRODUCKTPAGE MOBILE*/
 
   .productpagecontainer {
-    max-width: 90%;
+    max-width: 100%;
     min-width: 200px;
     margin-top: 10px;
     justify-content: center;
@@ -2190,10 +2244,6 @@ fieldset button {
 
   .progress img {
     display: none;
-  }
-
-  .progress b {
-    color: var(--main-color-two);
   }
 
   .mobilearrow {

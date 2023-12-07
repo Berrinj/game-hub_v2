@@ -59,8 +59,7 @@ async function getGame() {
 
 
     breadcrumbsPage.innerHTML += `<b class="breadcrumbspage">${result.title}</b>`;
-    productContainer.innerHTML += `<div class"productpagecontainer">
-                                    <div class="productquickinfo">
+    productContainer.innerHTML += `<div class="productquickinfo">
                                         <h1>${result.title}</h1>
                                         <img class="mainimg" src="${result.image}" alt="${result.title} cover photo">
                                         <p class="pp-p-one">${result.description}</p>
@@ -71,10 +70,10 @@ async function getGame() {
                                         <h2>Price: $${result.price}</h2>
                                         <p style="color: ${saleFont}">${saleMessage}</p></div>
                                         <div class="cartbuyheart">
-                                        <button class="cart">
+                                        <button class="cart" aria-label="Add to cart button" title="Add to cart button">
                                         <i class="fa-solid fa-cart-plus fa-2xl gamecart" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
                                         </button>
-                                        <button class="heart">
+                                        <button class="heart" aria-label="Add to wishlist button" title="Add to wishlist button">
                                         <i class="${cssClass} fa-heart fa-2xl gameheart" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
                                         </button>
                                         <a href="cart.html" class="buy">
@@ -83,7 +82,7 @@ async function getGame() {
                                         </div>
                                     <p class="added-to-cart"></p>
                                     </div>
-                                </div>`;
+                                `;
 
 // Cart icon
         const cartButton = document.querySelector(".productpagecontainer i.fa-cart-plus");

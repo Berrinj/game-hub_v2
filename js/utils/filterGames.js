@@ -11,14 +11,20 @@ export function sortGames() {
     let selectedValue = selectSortBy.value;
     console.log("Selected Value:", selectedValue);
     switch (selectedValue) {
+        // case "all":
+        //     selectHeading.textContent = "All games";
+        //     break;
         case "3+":
             selectHeading.textContent = "All games";
             break;
+        case "12+":
+            selectHeading.textContent = "Rated 12 games";
+            break;
         case "16+":
-            selectHeading.textContent = "Rated 16+ games";
+            selectHeading.textContent = "Rated 16 games";
             break;
         case "18+":
-            selectHeading.textContent = "Rated 18+ games";
+            selectHeading.textContent = "Rated 18 games";
             break;
         case "Sports":
             selectHeading.textContent = "Sports games";

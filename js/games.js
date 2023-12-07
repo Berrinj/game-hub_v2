@@ -55,7 +55,7 @@ function createProductCard(game) {
         
         
     productCard.innerHTML = `   <a href="productpage.html?id=${game.id}">
-                                <img class="productimg" src="${game.image}">
+                                <img class="productimg" src="${game.image}" alt="${game.title} product image">
                                 <h3>${game.title}</h3>
                                 <p>-Available for PS4, XBOX One and PC</p>
                                 <p>-Instant download</p>
@@ -86,9 +86,13 @@ if (selectedValue !== "3+") {
     if (selectedValue === "16+") {
         games = games.filter((game) => game.ageRating === selectedValue);
     } else if (selectedValue === "18+") {
-        games = games.filter((game) => game.ageRating === selectedValue);
+        games = games.filter((game) => game.ageRating === selectedValue);   
+    } else if (selectedValue === "12+") {
+        games = games.filter((game) => game.ageRating === selectedValue);   
     } else if (selectedValue === "onSale"){
         games = games.filter((game) => game.onSale);
+    } else if (selectedValue === "3+"){
+        games = games.filter((game) => game.ageRating === selectedValue);
     } else {
          games = games.filter((game) => game.genre === selectedValue);
     }
