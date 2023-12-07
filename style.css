@@ -1,3 +1,33 @@
+:root {
+  --main-color-one: #a1ca77;
+  --main-color-one-trans: #789b548f;
+  --main-color-two: #1b203d;
+  --sidebar-bg: #a1ca77;
+  --topmenu-bg: #a1ca77;
+  --body-bg: #f6f6f6;
+  --dark-green: #779b54;
+}
+
+
+
+/*ICONS*/
+
+.profilevector,
+.cartvector,
+.wishlistvector,
+.aboutvector,
+.fas.fa-bars {
+  font-size: 3em;
+  line-height: unset;
+  color: var(--main-color-two);
+  margin-bottom: 5px;
+  /* display: block;
+  height: 35px;
+  margin-bottom: 5px; */
+}
+
+
+
 .header {
   width: 100%;
   height: 260px;
@@ -41,7 +71,7 @@
 }
 
 .welcomemessage {
-  background-color: #1b203d;
+  background-color: var(--main-color-two);
   height: 34px;
   font-size: 0;
   margin: 0;
@@ -60,7 +90,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #f6f6f6;
+  background-color: var(--body-bg);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -84,8 +114,8 @@ main .cat {
 
 nav {
   left: 0;
-  background-color: #bac5cf;
-  color: #1b203d;
+  background-color: var(--main-color-one);
+  color: var(--main-color-two);
   width: 77px;
   height: 100%;
   font-size: 12px;
@@ -95,7 +125,7 @@ nav {
 }
 
 nav a {
-  color: #1b203d;
+  color: var(--main-color-two);
   font-family: Inter, Arial;
   text-decoration: none;
   display: flex;
@@ -112,17 +142,6 @@ nav a {
   width: 68px;
   padding-top: 15px;
   margin: auto;
-}
-
-.profilevector,
-.cartvector,
-.wishlistvector,
-.aboutvector,
-.fas.fa-bars {
-  /* padding-top: 28px; */
-  display: block;
-  height: 35px;
-  margin-bottom: 5px;
 }
 
 ul li {
@@ -157,8 +176,8 @@ nav p {
   position: absolute;
   width: 200px;
   height: auto;
-  border: 1px solid #1b203d;
-  border-top: 1px solid #cfa7a5;
+  border: 1px solid var(--main-color-two);
+  border-top: 1px solid var(--main-color-one);
   top: 294px;
   left: 77px;
   z-index: 2000;
@@ -171,7 +190,7 @@ nav p {
   text-align: left;
   padding: 12px;
   font-size: 1rem;
-  border-bottom: 1px solid #1b203d;
+  border-bottom: 1px solid var(--main-color-two);
 }
 
 .hamburger-menu h3 {
@@ -180,7 +199,7 @@ nav p {
   padding: 5px;
   padding-left: 12px;
   margin: 0;
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
 }
 
 .ratedtwo {
@@ -219,17 +238,18 @@ a.logout {
   padding-right: 10px;
   padding-bottom: 10px;
   gap: 10px;
-  box-shadow: 0 4px 2px -2px grey;
-  background-color: #bac5cf;
+  box-shadow: 0 4px 2px -2px var(--dark-green);
+  background-color: var(--main-color-two);
 }
 
 .searchbar {
   width: 550px;
-  background-color: #ced8e2;
+  /* background-color: #ced8e2; */
+  background-color: var(--dark-green);
   display: flex;
   border-radius: 10px;
   padding: 5px 5px;
-  border: 1px solid #1b203d;
+  border: 1px solid var(--main-color-one);
 }
 
 .searchbar b {
@@ -238,7 +258,8 @@ a.logout {
 
 .searchbar input {
   order: 2;
-  background: #ced8e2;
+  color: var(--main-color-two);
+  background: var(--dark-green);
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
   border: 0;
@@ -254,6 +275,14 @@ a.logout {
 
 #searchbarinput {
   padding: 0;
+}
+
+#searchbarinput::placeholder {
+  color: var(--main-color-two);
+}
+
+.fa-magnifying-glass {
+  color: var(--main-color-two);
 }
 
 .platforms {
@@ -280,6 +309,12 @@ a.logout {
 .platform-heading {
   display: flex;
   align-items: center;
+  gap: 5px;
+  color: var(--dark-green);
+}
+
+.nintendo img {
+  height: 20px;
 }
 
 /* 
@@ -317,7 +352,7 @@ a.logout {
   margin-left: auto;
   margin-right: auto;
   width: 300px;
-  border: 1px solid #1b203d5e;
+  border: 1px solid var(--main-color-two)5e;
   border-radius: 20px;
   top: 72px;
   background-color: #fff;
@@ -329,7 +364,7 @@ a.logout {
 .xbox-menu p,
 .ns-menu p {
   margin-top: 0;
-  color: #1b203d
+  color: var(--main-color-two)
 }
 
 .pc-menu h4,
@@ -397,7 +432,7 @@ p.promo-p-two {
 .promo-readmore-button {
   max-width: 300px;
   min-width: 200px;
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
   color: #000;
   border-radius: 7px;
   text-align: center;
@@ -414,7 +449,8 @@ p.promo-p-two {
 
 .promobanner {
   width: 100%;
-  background-color: #1b203d;
+  background-color: var(--main-color-two);
+  box-shadow: 0 4px 2px -2px var(--dark-green);
 }
 
 .promobanner p {
@@ -423,6 +459,7 @@ p.promo-p-two {
   font-size: 1.4rem;
   padding: 5px;
   color: darkorange;
+  color: var(--main-color-one);
   letter-spacing: 0.15rem;
 }
 
@@ -443,7 +480,7 @@ p.promo-p-two {
 
 .filter-buttons button {
   width: 50px;
-  background-color: #1b203d;
+  background-color: var(--main-color-two);
   padding: 7px;
   color: white;
   border-radius: 7px;
@@ -508,13 +545,13 @@ a:active {
 .games-container p {
   width: 228px;
   margin: 8px 8px 0px 8px;
-  color: #1b203d;
+  color: var(--main-color-two);
 }
 
 .games-container h3 {
   width: 228px;
   margin: 8px 8px 0px 8px;
-  color: #1b203d;
+  color: var(--main-color-two);
 }
 
 .price-info {
@@ -530,12 +567,12 @@ a:active {
 
 .price-box {
   width: 63px;
-  background-color: #1b203d;
+  background-color: var(--main-color-two);
   margin: 8px;
   padding: 0 5px 0 5px;
 }
 
-.fa-heart {
+.add-to-wishlist {
   padding: 10px 10px 20px 10px;
   display: flex;
   justify-content: end;
@@ -543,6 +580,11 @@ a:active {
 
 .gameheart {
   padding: 0;
+  color: var(--main-color-two);
+}
+
+.gamecart {
+  color: var(--main-color-two);
 }
 
 /* .favheart {
@@ -587,7 +629,7 @@ a:active {
 }
 
 .viewall-button a {
-  color: #1b203d;
+  color: var(--main-color-two);
 }
 
 .viewall-button:hover {
@@ -597,12 +639,12 @@ a:active {
 .backtotop {
   width: 100%;
   text-align: center;
-  color: #1b203d;
+  color: var(--main-color-two);
   margin-bottom: 10px;
 }
 
 .backtotop a {
-  color: #1b203d;
+  color: var(--main-color-two);
   text-decoration: none;
 }
 
@@ -614,7 +656,7 @@ a:active {
 
 footer {
   display: flex;
-  background-color: #1b203d;
+  background-color: var(--main-color-two);
   text-align: center;
   justify-content: space-between;
   align-items: center;
@@ -670,7 +712,7 @@ footer .fcenter img {
 }
 
 .fright li:hover {
-  color: #cfa7a5;
+  color: var(--main-color-one);
 }
 
 /* https://stackoverflow.com/questions/462931/css-layout-help-3-column-footer */
@@ -685,7 +727,7 @@ footer .fcenter img {
 }
 
 .breadcrumbs a {
-  color: #1b203d;
+  color: var(--main-color-two);
   font-style: italic;
 }
 
@@ -781,6 +823,15 @@ footer .fcenter img {
   grid-row: 5;
 }
 
+.sale {
+  grid-column: 2;
+  grid-row: 6;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+}
+
 .cartbuyheart {
   display: flex;
   align-items: center;
@@ -798,12 +849,12 @@ footer .fcenter img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
   height: 35px;
   border: 0;
   border-radius: 7px;
   cursor: pointer;
-  color: #1b203d;
+  color: var(--main-color-two);
 }
 
 
@@ -813,21 +864,21 @@ footer .fcenter img {
 }
 
 .cart {
-  width: 51px;
+  width: 60px;
 }
 
 .buy {
-  width: 253px;
+  width: 150px;
 }
 
 .buy:hover,
 .cart:hover,
 .heart:hover {
-  background-color: #e6d2d1;
+  background-color: var(--dark-green);
 }
 
 .heart {
-  width: 51px;
+  width: 60px;
 }
 
 .released {
@@ -915,7 +966,7 @@ footer .fcenter img {
 .img1,
 .img2,
 .img3 {
-  box-shadow: 0px 1px 2px 0px #1b203d;
+  box-shadow: 0px 1px 2px 0px var(--main-color-two);
   cursor: pointer;
   margin: auto;
   margin-top: 11px;
@@ -986,7 +1037,7 @@ footer .fcenter img {
   display: flex;
   margin-left: 10%;
   gap: 10px;
-  color: #1b203d;
+  color: var(--main-color-two);
 }
 
 .progress {
@@ -994,7 +1045,7 @@ footer .fcenter img {
 }
 
 .progress a {
-  color: #1b203d;
+  color: var(--main-color-two);
 }
 
 .progress ul,
@@ -1071,7 +1122,7 @@ li {
   cursor: pointer;
   gap: 5px;
   width: fit-content;
-  background-color: #cfa7a566;
+  background-color: var(--main-color-one-trans);
   color: #000;
   border: none;
   border-radius: 7px;
@@ -1079,7 +1130,7 @@ li {
 }
 
 .deleteitem:hover {
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
 }
 
 .promocodefield {
@@ -1138,8 +1189,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #1b203d;
-  background-color: #cfa7a5;
+  color: var(--main-color-two);
+  background-color: var(--main-color-one);
   border: none;
   margin-bottom: 40px;
   width: 361px;
@@ -1295,7 +1346,7 @@ input[type] {
 }
 
 #placeorder {
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
 }
 
 /* .placeorder {
@@ -1355,14 +1406,14 @@ input[type] {
   align-items: center;
   width: 100%;
   height: 90px;
-  background-color: #cfa7a5;
+  background-color: #779b54;
 }
 
 .testnewslettertext {
   width: 50%;
   margin: 0;
   font-size: 20px;
-  color: #1b203d;
+  color: var(--main-color-two);
   align-self: center;
 }
 
@@ -1379,7 +1430,7 @@ input[type] {
 
 .testnewsletterinput label {
   width: 400px;
-  color: #1b203d;
+  color: var(--main-color-two);
   display: flex;
   flex-direction: column;
   margin-top: 0;
@@ -1388,13 +1439,13 @@ input[type] {
 
 .testnewsletter button {
   height: 41px;
-  background-color: #1b203d;
+  background-color: var(--main-color-two);
   color: #fff;
   border-radius: 10px;
   border: 0;
   margin-left: 10px;
   cursor: pointer;
-  box-shadow: 0px 1px 2px 0px #1b203d;
+  box-shadow: 0px 1px 2px 0px var(--main-color-two);
   align-self: flex-end;
   margin-bottom: 16px;
 }
@@ -1451,7 +1502,7 @@ fieldset button {
 
 .emailbox {
   font-size: 1.2rem;
-  background-color: #1b203d;
+  background-color: var(--main-color-two);
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -1466,7 +1517,7 @@ fieldset button {
 }
 
 .emailbox a {
-  color: #cfa7a5;
+  color: var(--main-color-one);
   text-decoration: none;
 }
 
@@ -1534,14 +1585,14 @@ fieldset button {
 
 .wishlistgames h2 {
   margin-top: 0;
-  color: #1b203d;
+  color: var(--main-color-two);
   text-decoration: none;
   margin-bottom: 0;
 }
 
 .wishlistgames p {
   margin-top: 10px;
-  color: #1b203d;
+  color: var(--main-color-two);
   text-decoration: none;
 }
 
@@ -1574,9 +1625,9 @@ fieldset button {
 
 .delete-wishlist-button {
   max-width: fit-content;
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
   padding: 10px;
-  color: #1b203d;
+  color: var(--main-color-two);
   border-radius: 5px;
   border: none;
 
@@ -1585,17 +1636,17 @@ fieldset button {
 .trash {
   width: fit-content;
   cursor: pointer;
-  background-color: #cfa7a566;
+  background-color: var(--main-color-one-trans);
   color: #000;
   border: none;
   border-radius: 7px;
   text-align: center;
   padding: 7px;
-  /* box-shadow: 0px 1px 2px 0px #1b203d; */
+  /* box-shadow: 0px 1px 2px 0px var(--main-color-two); */
 }
 
 .trash:hover {
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
 }
 
 .nofavs {
@@ -1652,7 +1703,7 @@ fieldset button {
 }
 
 .login-button {
-  background-color: #cfa7a5;
+  background-color: var(--main-color-one);
   color: #000;
   border-radius: 7px;
   text-align: center;
@@ -1766,7 +1817,7 @@ fieldset button {
   nav {
     position: fixed;
     top: 0;
-    background-color: #cfa7a5;
+    background-color: var(--main-color-one);
     width: 100vw;
     height: 70px;
     display: flex;
@@ -1789,7 +1840,7 @@ fieldset button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #b68b89;
+    background-color: var(--main-color-one-trans);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1817,7 +1868,7 @@ fieldset button {
     left: 0;
     top: 70px;
     box-shadow: 0 0 0 0;
-    border-top: 1px solid #1b203d;
+    border-top: 1px solid var(--main-color-two);
   }
 
   .small-logo {
@@ -1881,8 +1932,7 @@ fieldset button {
   }
 
   .topmenu {
-    background-color: #bac5cf;
-    box-shadow: 0 4px 2px -2px grey;
+    background-color: var(--main-color-two);
     height: auto;
   }
 
@@ -1905,9 +1955,9 @@ fieldset button {
     margin: 0;
   }
 
-  .platforms img {
+  /* .platforms img {
     height: 25px;
-  }
+  } */
 
   /* .labelname p {
     font-size: 0;
@@ -1970,7 +2020,7 @@ fieldset button {
     text-align: center;
     background-color: #bac5cf;
     order: 1;
-    color: #1b203d;
+    color: var(--main-color-two);
     margin: 0;
     padding: 0;
   }
@@ -2108,7 +2158,7 @@ fieldset button {
   .buy:hover,
   .cart:hover,
   .heart:hover {
-    background-color: #cfa7a5;
+    background-color: var(--main-color-one);
   }
 
   .buy {
@@ -2134,7 +2184,7 @@ fieldset button {
   }
 
   .progress b {
-    color: #1b203d;
+    color: var(--main-color-two);
   }
 
   .mobilearrow {
@@ -2143,7 +2193,7 @@ fieldset button {
 
   .progress li {
     font-size: 0.8rem;
-    color: #1b203d;
+    color: var(--main-color-two);
   }
 
   .cartinfo {

@@ -31,30 +31,28 @@
 
 <body>
   <div class="header">
-    <img src="logo/GameHub_Logopink72.png" alt="Game Hub logo">
+    <img src="logo/GameHub_Logodarkgreen72.png" alt="Game Hub logo">
   </div>
-  <div class="welcomemessage">
-    <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
-  </div>
+
   <div class="wrapper">
     <div class="leftside">
       <nav>
-
         <a href="index.html" class="mobilelogo"><img class="small-logo" src="logo/GameHub_LogoNoslogan72.png"
             alt="gamehub logo home"></a>
-        <a href="profile.html" class="mobileprofile"><img class="profilevector" src="vector/profile.svg"
-            alt="profile icon">
+        <a href="profile.html" class="mobileprofile"><i class="fa-solid fa-user fa-2xl profilevector"
+            alt="profile icon"></i>
           <p class="nav-name">My Profile</p>
         </a>
-        <a href="cart.html" class="mobilecart"><img class="cartvector" src="vector/cart.svg" alt="cart icon">
+        <a href="cart.html" class="mobilecart"><i class="fa-solid fa-cart-shopping fa-2xl cartvector"></i>
           <p class="nav-name">My Cart</p>
           <p class="cart-status"></p>
         </a>
-        <a href="wishlist.html" class="mobilewishlist"><img class="wishlistvector" src="vector/wishlist.svg"
-            alt="wishlist icon">
+        <a href="wishlist.html" class="mobilewishlist">
+          <i class="fa-solid fa-heart fa-2xl wishlistvector" alt="wishlist icon"></i>
           <p class="nav-name">My Wishlist</p>
         </a>
-        <a href="about.html" class="mobileabout"><img class="aboutvector" src="vector/info.svg" alt="about icon">
+        <a href="about.html" class="mobileabout">
+          <i class="fa-solid fa-circle-info fa-2xl aboutvector" alt="about icon"></i>
           <p class="nav-name">About Us</p>
         </a>
         <input type="checkbox" id="menu-checkbox">
@@ -63,112 +61,53 @@
         <p class="menu-more">More</p>
         <div class="hamburger-menu">
           <h3>Hello, Guest</h3>
-          <a href="about.html">About us</a>
+          <a href="index.html"><b>HOME</b></a>
           <a href="contact.html">Contact us</a>
+          <a href="about.html">About us</a>
           <a href="terms-and-conditions.html">Terms & Conditions</a>
           <div class="smallestscreen">
             <a href="profile.html">My profile page</a>
             <a href="wishlist.html">My wishlist</a>
           </div>
-          <a href="index.html" class="logout">Log out</a>
+          <a href="profile.html" class="logout">Log in</a>
         </div>
       </nav>
     </div>
     <main>
+      <div class="welcomemessage">
+        <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
+      </div>
       <div class="topmenu">
         <form action="#" class="searchbar">
           <label for="searchbarinput"><b>search bar</b></label>
           <input type="text" id="searchbarinput" placeholder="Search for games">
           <button type="submit">
-            <img src="vector/search.svg" alt="search icon">
+            <i class="fa-solid fa-magnifying-glass fa-xl" alt="search icon"></i>
           </button>
         </form>
 
         <div class="platforms">
           <h4 class="platform-heading">Platforms:</h4>
-          <!-- <input type="checkbox" id="pc-checkbox">
-          <label for="pc-checkbox" class="labelname"> -->
+
           <div class="pc">
-            <img src="vector/pcmini.svg" alt="Browse games by PC">
+            <i class="fa-solid fa-desktop" alt="Browse games by PC"></i>
             <p>PC</p>
           </div>
-          <!-- </label> -->
-          <!-- <div class="pc-menu">
-            <h4>Platforms</h4>
-            <hr>
-            <a href="productpage.html">
-              <img src="vector/windows.svg" alt="windows icon">
-              <p>Windows 11</p>
-            </a>
-          </div> -->
 
-          <!-- <input type="checkbox" id="ps-checkbox">
-          <label for="ps-checkbox" class="labelname"> -->
           <div class="playstation">
-            <img src="vector/psmini.svg" alt="Browse games by PlayStation">
+            <i class="fa-brands fa-playstation" alt="Browse games by PlayStation"></i>
             <p>PlayStation</p>
           </div>
-          <!-- </label> -->
-          <!-- <div class="ps-menu">
-            <h4>Console</h4>
-            <hr>
-            <div class="consoles">
-              <div class="console-one">
-                <a href="productpage.html">
-                  <img src="vector/ps4.svg" alt="playstation 4 icon">
-                  <p>PS4</p>
-                </a>
-              </div>
-              <div class="console-two">
-                <a href="productpage.html">
-                  <img src="vector/ps5.svg" alt="playstation 5 icon">
-                  <p>PS5</p>
-                </a>
-              </div>
-            </div>
-          </div> -->
 
-          <!-- <input type="checkbox" id="xbox-checkbox">
-          <label for="xbox-checkbox" class="labelname"> -->
           <div class="xbox">
-            <img src="vector/xboxmini.svg" alt="Browse games by Xbox">
+            <i class="fa-brands fa-xbox" alt="Browse games by Xbox"></i>
             <p>Xbox</p>
           </div>
-          <!-- </label> -->
-          <!-- <div class="xbox-menu">
-            <h4>Console</h4>
-            <hr>
-            <div class="consoles">
-              <div class="console-one">
-                <a href="productpage.html">
-                  <img src="vector/xboxicon.svg" alt="xbox icon">
-                  <p>XBOX One</p>
-                </a>
-              </div>
-              <div class="console-two">
-                <a href="productpage.html">
-                  <img src="vector/xboxicon.svg" alt="xbox icon">
-                  <p>XBOX X</p>
-                </a>
-              </div>
-            </div>
-          </div> -->
 
-          <!-- <input type="checkbox" id="ns-checkbox">
-          <label for="ns-checkbox" class="labelname"> -->
           <div class="nintendo">
             <img src="vector/nintendomini.svg" alt="Browse games by Nintendo">
             <p>Nintendo</p>
           </div>
-          <!-- </label> -->
-          <!-- <div class="ns-menu">
-            <h4>Console</h4>
-            <hr>
-            <a href="productpage.html">
-              <img src="vector/nintendoswitch.svg" alt="nintendo switch icon">
-              <p>Nintendo Switch</p>
-            </a>
-          </div> -->
 
         </div>
 

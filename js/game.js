@@ -23,6 +23,8 @@ const url =`${GAMEHUB_API_URL}/${id}`;
 const main = document.querySelector("main");
 const productContainer = document.querySelector(".productpagecontainer");
 
+
+
 const favorites = getExistingFavs();
 
 
@@ -34,10 +36,13 @@ async function getGame() {
     productContainer.innerHTML = ``;
     document.title = `Game Hub - Product Page - ${result.title}`;
     let saleFont = "";
+    let saleText = document.querySelector(".sale-text");
+    let saleMessage = "";
+    
     if (result.onSale === true) {
         result.price = result.discountedPrice;
-        
-        saleFont = "red";
+        saleMessage = "On sale!";
+        saleFont = "#C5312D";
     };
 
     let cssClass = "far";
@@ -62,24 +67,26 @@ async function getGame() {
                                         <p class="availablefor">Genre: ${result.genre}</p>
                                         <p id="instantdownload">-Instant download</p>
                                         <p class="released">Released: ${result.released}</p>
-                                        <h2 style="color: ${saleFont}">Price: $${result.price}</h2>
+                                        <div class="sale">
+                                        <h2>Price: $${result.price}</h2>
+                                        <p style="color: ${saleFont}">${saleMessage}</p></div>
                                         <div class="cartbuyheart">
                                         <button class="cart">
-                                        <i class="fa-solid fa-cart-shopping fa-2xl" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
+                                        <i class="fa-solid fa-cart-plus fa-2xl gamecart" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
                                         </button>
-                                        <a href="cart.html" class="buy">
-                                        <b>Go to cart</b>
-                                        </a>
                                         <button class="heart">
                                         <i class="${cssClass} fa-heart fa-2xl gameheart" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
                                         </button>
+                                        <a href="cart.html" class="buy">
+                                        <b>View cart</b>
+                                        </a>
                                         </div>
                                     <p class="added-to-cart"></p>
                                     </div>
                                 </div>`;
 
 // Cart icon
-        const cartButton = document.querySelector(".productpagecontainer i.fa-cart-shopping");
+        const cartButton = document.querySelector(".productpagecontainer i.fa-cart-plus");
         cartButton.addEventListener("click", cartIconChange);
         
         getCartItems();

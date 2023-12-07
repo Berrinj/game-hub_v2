@@ -29,30 +29,27 @@
 <body>
   <div class="header">
     <a href="index.html">
-      <img src="logo/GameHub_Logopink72.png" alt="Game Hub logo"></a>
-  </div>
-  <div class="welcomemessage">
-    <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
+      <img src="logo/GameHub_Logodarkgreen72.png" alt="Game Hub logo"></a>
   </div>
   <div class="wrapper">
     <div class="leftside">
       <nav>
-
         <a href="index.html" class="mobilelogo"><img class="small-logo" src="logo/GameHub_LogoNoslogan72.png"
             alt="gamehub logo home"></a>
-        <a href="profile.html" class="mobileprofile"><img class="profilevector" src="vector/profile.svg"
-            alt="profile icon">
+        <a href="profile.html" class="mobileprofile"><i class="fa-solid fa-user fa-2xl profilevector"
+            alt="profile icon"></i>
           <p class="nav-name">My Profile</p>
         </a>
-        <a href="cart.html" class="mobilecart"><img class="cartvector" src="vector/cart.svg" alt="cart icon">
+        <a href="cart.html" class="mobilecart"><i class="fa-solid fa-cart-shopping fa-2xl cartvector"></i>
           <p class="nav-name">My Cart</p>
           <p class="cart-status"></p>
         </a>
-        <a href="wishlist.html" class="mobilewishlist"><img class="wishlistvector" src="vector/wishlist.svg"
-            alt="wishlist icon">
+        <a href="wishlist.html" class="mobilewishlist">
+          <i class="fa-solid fa-heart fa-2xl wishlistvector" alt="wishlist icon"></i>
           <p class="nav-name">My Wishlist</p>
         </a>
-        <a href="about.html" class="mobileabout"><img class="aboutvector" src="vector/info.svg" alt="about icon">
+        <a href="about.html" class="mobileabout">
+          <i class="fa-solid fa-circle-info fa-2xl aboutvector" alt="about icon"></i>
           <p class="nav-name">About Us</p>
         </a>
         <input type="checkbox" id="menu-checkbox">
@@ -61,19 +58,23 @@
         <p class="menu-more">More</p>
         <div class="hamburger-menu">
           <h3>Hello, Guest</h3>
-          <a href="about.html">About us</a>
+          <a href="index.html"><b>HOME</b></a>
           <a href="contact.html">Contact us</a>
+          <a href="about.html">About us</a>
           <a href="terms-and-conditions.html">Terms & Conditions</a>
           <div class="smallestscreen">
             <a href="profile.html">My profile page</a>
             <a href="wishlist.html">My wishlist</a>
           </div>
-          <a href="index.html" class="logout">Log out</a>
+          <a href="profile.html" class="logout">Log in</a>
         </div>
       </nav>
     </div>
 
     <main>
+      <div class="welcomemessage">
+        <p>WELCOME TO THE UNIVERSE OF GAMES!</p>
+      </div>
       <div class="topmenu">
         <form action="index.html" class="searchbar">
           <label for="searchbarinput"><b>search bar</b></label>
@@ -83,7 +84,7 @@
           </button>
         </form>
 
-        <div class="platforms">
+        <!-- <div class="platforms">
           <h4 class="platform-heading">Platforms:</h4>
           <div class="pc">
             <img src="vector/pcmini.svg" alt="Browse games by PC">
@@ -101,7 +102,7 @@
             <img src="vector/nintendomini.svg" alt="Browse games by Nintendo">
             <p>Nintendo</p>
           </div>
-        </div>
+        </div> -->
 
       </div>
 
@@ -112,140 +113,9 @@
           <b class="breadcrumbspage"></b>
         </p>
       </section>
-      <!-- <div class="error" hidden></div> -->
       <div class="productpagecontainer">
         <div class="loader">Loading..</div>
         <p class="addedtocart"></p>
-        <!-- <div class="productpage">
-          <div class="productquickinfo">
-            <img class="mainimg">
-            <h1></h1>
-            <p class="pp-p-one"></p>
-            <p class="availablefor"></p>
-            <p id="instantdownload"></p>
-            <h2></h2>
-            <p class="released"></p>
-          </div>
-          <div class="cartbuyheart">
-            <a href="cart.html" class="cart">
-              <img src="vector/cart.svg" alt="cart icon"></a>
-            <a href="checkout.html" class="buy">
-              <b>Buy Now</b>
-            </a>
-            <a href="wishlist.html" class="heart">
-              <img src="vector/wishlist.svg" alt="heart wishlist icon">
-            </a>
-          </div> -->
-        <!-- <div class="productquickinfo">
-            <img class="mainimg" src="zoom/GameHub_covers9-72-zoom.jpg" alt="cyberpunk cover photo">
-            <div class="pp-title-icons">
-              <h1>CYBERPUNK</h1>
-              <div class="pp-mobilevectors">
-                <a href="cart.html"><img src="vector/cart.svg" alt="cart icon"></a>
-                <a href="wishlist.html"><img src="vector/wishlist.svg" alt="heart wishlist icon"></a>
-              </div>
-            </div>
-            <p class="pp-p-one">
-              Welcome to the world of intense fighting video games! Get ready
-              to experience heart-pumping action and adrenaline-fueled battles
-              that will keep you on the edge of your seat.
-            </p>
-            <p>
-              <b>-Available for:</b> PS4, PS5, Nintendo Switch, XBOX One &
-              XBOX Series X
-            </p>
-            <p id="instantdownload">-Instant download</p>
-            <h2>Price: $35</h2>
-          </div>
-
-          <div class="cartbuyheart">
-            <a href="cart.html" class="cart">
-              <img src="vector/cart.svg" alt="cart icon"></a>
-            <a href="checkout.html" class="buy">
-              <b>Buy Now</b>
-            </a>
-            <a href="wishlist.html" class="heart">
-              <img src="vector/wishlist.svg" alt="heart wishlist icon">
-            </a>
-          </div>
-
-          <div class="description">
-            <h3>Description</h3>
-            <p>
-              Welcome to the world of intense fighting video games! Get ready
-              to experience heart-pumping action and adrenaline-fueled battles
-              that will keep you on the edge of your seat. In this game,
-              you'll choose your fighter from a diverse roster of characters,
-              each with their unique strengths and weaknesses.
-            </p>
-
-            <p>
-              As you step into the arena, you'll face off against opponents in
-              one-on-one battles, unleashing a variety of moves and combos to
-              take them down. From devastating punches and kicks to powerful
-              throws and special abilities, you'll need to master each of your
-              fighter's moves to emerge victorious.
-            </p>
-            <button id="toggle"><em>Read More</em></button>
-                                jacascript needed
-                            inspired by https://codepen.io/legendaryPower/pen/dvJQvB
-            <span id="text">
-              As you progress through the game, you'll face tougher opponents,
-              each with their unique fighting styles and strategies. You'll
-              need to be quick on your feet, anticipating your opponent's
-              moves and reacting with lightning-fast reflexes. In addition to
-              the main story mode, this game features a range of other modes
-              to keep you entertained, including arcade mode, time attack,
-              survival mode, and online multiplayer. Take on the best players
-              from around the world and climb the rankings to become the
-              ultimate champion. With stunning graphics, immersive sound
-              effects, and intuitive controls, this fighting game will keep
-              you coming back for more. Are you ready to enter the arena and
-              show your opponents what you're made of? The fight begins
-              now!</span>
-
-            <input type="checkbox" id="readmore-checkbox">
-            <label for="readmore-checkbox" class="label-readmore">
-              Read More
-            </label>
-            <div class="readmore">
-              <p>
-                As you progress through the game, you'll face tougher
-                opponents, each with their unique fighting styles and
-                strategies. You'll need to be quick on your feet, anticipating
-                your opponent's moves and reacting with lightning-fast
-                reflexes. In addition to the main story mode, this game
-                features a range of other modes to keep you entertained,
-                including arcade mode, time attack, survival mode, and online
-                multiplayer. Take on the best players from around the world
-                and climb the rankings to become the ultimate champion.
-              </p>
-
-              <p>
-                With stunning graphics, immersive sound effects, and intuitive
-                controls, this fighting game will keep you coming back for
-                more. Are you ready to enter the arena and show your opponents
-                what you're made of? The fight begins now!
-              </p>
-            </div>
-          </div>
-          <div class="visuals">
-            <h3>Visuals</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/8X2kIfS6fb8"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-
-            <img class="img1" src="img/img1.jpg" alt="cyberpunk cover photo">
-            <img class="img2" src="img/img2.jpg" alt="cyberpunk cover photo">
-            <img class="img3" src="img/img3.jpg" alt="cyberpunk cover photo">
-          </div>
-          <div class="reviews">
-            <h3>Reviews</h3>
-            <img src="img/reviewmelissa.jpg" alt="game review by Melissa F.">
-            <img src="img/reviewjohn.jpg" alt="game review by John K.">
-          </div>
-        </div> -->
       </div>
       <!-- <div class="backtotop">
           <a href="#top">

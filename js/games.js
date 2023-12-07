@@ -67,7 +67,7 @@ function createProductCard(game) {
                                 <p class="on-sale-message">${saleMessage}</p>
                                 </div>
                                 </a>
-                                <i class="${cssClass} fa-heart fa-2xl" data-id="${game.id}" data-name="${game.title}" data-image="${game.image}" data-price="${game.price}"></i>`
+                                <i class="${cssClass} fa-heart fa-2xl add-to-wishlist" data-id="${game.id}" data-name="${game.title}" data-image="${game.image}" data-price="${game.price}"></i>`
     
     return productCard;
     } catch (error) {

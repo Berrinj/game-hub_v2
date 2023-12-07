@@ -3,7 +3,7 @@ import { updateCartStatus } from "./updateCartStatus.js";
 
 
 export function cartIconChange() {
-    const cartIconColor = document.querySelector(".fa-cart-shopping");
+    const cartIconColor = document.querySelector(".fa-cart-plus");
     const goToCartButton = document.querySelector(".buy");
     const cartNumberOfItems = document.querySelector(".cart-status");
     const addedToCart = document.querySelector(".added-to-cart");
@@ -28,7 +28,7 @@ export function cartIconChange() {
         saveCartItem(currentCartItems);
 
         cartIconColor.style.color = "green";
-        // goToCartButton.innerHTML = "<b>Added!</b>";
+        goToCartButton.innerHTML = "<b>Added to cart</b>";
         // addedToCart.innerHTML = "<i>Added to cart</i>";
         // cartNumberOfItems.innerHTML = `<p class="cart-status">${currentCartItems.length} item(s)</p>`;
         // if ( windowInnerWidth < 824) {
@@ -41,7 +41,7 @@ export function cartIconChange() {
         setTimeout(() => {
             cartIconColor.style.color = "";
             // addedToCart.innerHTML = "";
-            // goToCartButton.innerHTML = "<b>Go to cart</b>";
+            goToCartButton.innerHTML = "<b>Go to cart</b>";
         }, 2000);
 
     } else {
