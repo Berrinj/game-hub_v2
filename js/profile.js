@@ -17,7 +17,7 @@ const signupForm = document.querySelector(".signup-form-container")
 const loginForm = document.querySelector(".login-form-container")
 loginForm.style.display = "none";
 profileMenu.style.display = "none";
-userGreeting.innerHTML += `Hello, Guest!`;
+userGreeting.innerHTML = `Hello, Guest!`;
 
 loginButton.addEventListener("click", openLoginForm);
 
