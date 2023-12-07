@@ -48,14 +48,14 @@ const doesObjectExist = favorites.find(function(fav) {
     favoritesContainer.innerHTML += `<li><div class="wishlist1" data-game-id="${favorite.id}">
                                         <a href="productpage.html?id=${favorite.id}">
                                         <img src="${favorite.image}" alt="${favorite.image} product image">
-                                        </a>
+                                        
                                         <div class="nameheart">
                                             <h2>${favorite.title}</h2>
                                         </div>
                                         
                                         <p>-Available for PS4, PS5, Nintendo Switch, XBOX One & XBOX
                                             Series X </p>
-                                        <p>-Instant download</p>
+                                        <p>-Instant download</p></a>
                                         <h3>Price: ${favorite.price}</h3>
                                         <button class="trash"><i class="fa-regular fa-trash-can"></i> Remove item</button>
                                     </div></li>`
