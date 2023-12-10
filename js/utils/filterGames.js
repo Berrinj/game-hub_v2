@@ -18,13 +18,13 @@ export function sortGames() {
             selectHeading.textContent = "All games";
             break;
         case "12+":
-            selectHeading.textContent = "Rated 12 games";
+            selectHeading.textContent = "PEGI 12 games";
             break;
         case "16+":
-            selectHeading.textContent = "Rated 16 games";
+            selectHeading.textContent = "PEGI 16 games";
             break;
         case "18+":
-            selectHeading.textContent = "Rated 18 games";
+            selectHeading.textContent = "PEGI 18 games";
             break;
         case "Sports":
             selectHeading.textContent = "Sports games";
