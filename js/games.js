@@ -134,8 +134,6 @@ if (selectedValue !== "3+") {
 
 renderProducts();
 
-
-
 // async function getGames() {
 
 //     try {
