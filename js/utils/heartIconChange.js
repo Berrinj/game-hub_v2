@@ -8,6 +8,7 @@ export  function heartIconChange() {
     const titleLocalStorage = this.dataset.name;
     const imageLocalStorage = this.dataset.image;
     const priceLocalStorage = this.dataset.price;
+    console.log(idLocalStorage, titleLocalStorage);
 
     const currentFavs = getExistingFavs();
 
@@ -17,7 +18,7 @@ export  function heartIconChange() {
     const heartIconColor = document.querySelector(".fa-heart.gameheart");
     if (!productExists) {
         const product = {
-            title: titleLocalStorage, 
+            name: titleLocalStorage, 
             id: idLocalStorage, 
             image: imageLocalStorage, 
             price: priceLocalStorage

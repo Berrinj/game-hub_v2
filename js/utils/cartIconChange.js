@@ -23,7 +23,7 @@ export function cartIconChange() {
 
     
     if (!productExists) {
-        const product = {title: titleLocalStorage, id: idLocalStorage, image: imageLocalStorage, price: priceLocalStorage};
+        const product = {name: titleLocalStorage, id: idLocalStorage, image: imageLocalStorage, price: priceLocalStorage};
         currentCartItems.push(product);
         saveCartItem(currentCartItems);
 

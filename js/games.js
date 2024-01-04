@@ -40,34 +40,35 @@ function createProductCard(game) {
     let cssClass = "far";
 
 
-    if (game.onSale === true) {
-        game.price = game.discountedPrice;
+    if (game.on_sale === true) {
+        // game.price = game.discountedPrice;
         saleMessage = "On sale!";
         };
 
         const doesObjectExist = favorites.find(function(fav) {
-         return fav.id === game.id;
+         return parseInt(fav.id) === parseInt(game.id);
         });
 
         if (doesObjectExist) {
             cssClass = "fa-solid";
         };
         
-        
+        let price = `${game.prices.price / 100}`;
     productCard.innerHTML = `   <a href="productpage.html?id=${game.id}">
-                                <img class="productimg" src="${game.image}" alt="${game.title} product image">
-                                <h3>${game.title}</h3>
+                                <img class="productimg" src="${game.images[0].src}" alt="${game.title} product image">
+                                <h3>${game.name}</h3>
                                 <p>-Available for PS4, XBOX One and PC</p>
                                 <p>-Instant download</p>
-                                <p>Genre: ${game.genre}</p>
+                                <p>Genre: ${game.categories[0].name}</p>
                                 <div class="price-info">
                                 <div class="price-box">
-                                <h4>$${game.price}</h4>
+                                <h4>${price} ${game.prices.currency_code}</h4>
+                                
                                 </div>
                                 <p class="on-sale-message">${saleMessage}</p>
                                 </div>
                                 </a>
-                                <i class="${cssClass} fa-heart fa-2xl add-to-wishlist" data-id="${game.id}" data-name="${game.title}" data-image="${game.image}" data-price="${game.price}"></i>`
+                                <i class="${cssClass} fa-heart fa-2xl add-to-wishlist" data-id="${game.id}" data-name="${game.name}" data-image="${game.images[0].src}" data-price="${price}"></i>`
     
     return productCard;
     } catch (error) {
@@ -81,7 +82,6 @@ export async function renderProducts(selectedValue = "3+") {
    let games = await getProducts(GAMEHUB_API_URL); 
    console.log("Games Data:", games);
    const gameContainer = document.querySelector(".gamesrow");
-
 if (selectedValue !== "3+") {
     if (selectedValue === "16+") {
         games = games.filter((game) => game.ageRating === selectedValue);
@@ -90,11 +90,11 @@ if (selectedValue !== "3+") {
     } else if (selectedValue === "12+") {
         games = games.filter((game) => game.ageRating === selectedValue);   
     } else if (selectedValue === "onSale"){
-        games = games.filter((game) => game.onSale);
+        games = games.filter((game) => game.on_sale);
     } else if (selectedValue === "3+"){
         games = games.filter((game) => game.ageRating === selectedValue);
     } else {
-         games = games.filter((game) => game.genre === selectedValue);
+         games = games.filter((game) => game.categories[0].name === selectedValue);
     }
    }
     

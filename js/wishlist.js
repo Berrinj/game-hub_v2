@@ -50,13 +50,13 @@ const doesObjectExist = favorites.find(function(fav) {
                                         <img src="${favorite.image}" alt="${favorite.image} product image">
                                         
                                         <div class="nameheart">
-                                            <h2>${favorite.title}</h2>
+                                            <h2>${favorite.name}</h2>
                                         </div>
                                         
                                         <p>-Available for PS4, PS5, Nintendo Switch, XBOX One & XBOX
                                             Series X </p>
                                         <p>-Instant download</p></a>
-                                        <h3>Price: ${favorite.price}</h3>
+                                        <h3>Price: ${favorite.price} NOK</h3>
                                         <button class="trash"><i class="fa-regular fa-trash-can"></i> Remove item</button>
                                     </div></li>`
 

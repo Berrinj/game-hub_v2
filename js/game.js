@@ -39,8 +39,8 @@ async function getGame() {
     let saleText = document.querySelector(".sale-text");
     let saleMessage = "";
     
-    if (result.onSale === true) {
-        result.price = result.discountedPrice;
+    if (result.on_sale === true) {
+        // result.price = result.discountedPrice;
         saleMessage = "On sale!";
         saleFont = "#C5312D";
     };
@@ -48,33 +48,32 @@ async function getGame() {
     let cssClass = "far";
 
     const doesObjectExist = favorites.find(function(fav) {
-
-
-        return fav.id === result.id;
+        console.log(typeof fav.id, typeof result.id)
+        return parseInt(fav.id, 10) === parseInt(result.id, 10);
     });
 
     if (doesObjectExist) {
         cssClass = "fa-solid";
     };
 
-
-    breadcrumbsPage.innerHTML += `<b class="breadcrumbspage">${result.title}</b>`;
+    let price = `${result.prices.price / 100}`;
+    let category = `${result.categories[0].name}`;
+    breadcrumbsPage.innerHTML += `<b class="breadcrumbspage">${result.name}</b>`;
     productContainer.innerHTML += `<div class="productquickinfo">
-                                        <h1>${result.title}</h1>
-                                        <img class="mainimg" src="${result.image}" alt="${result.title} cover photo">
+                                        <h1>${result.name}</h1>
+                                        <img class="mainimg" src="${result.images[0].src}" alt="${result.title} cover photo">
                                         <p class="pp-p-one">${result.description}</p>
-                                        <p class="availablefor">Genre: ${result.genre}</p>
+                                        <p class="availablefor">Genre: ${category}</p>
                                         <p id="instantdownload">-Instant download</p>
-                                        <p class="released">Released: ${result.released}</p>
                                         <div class="sale">
-                                        <h2>Price: $${result.price}</h2>
+                                        <h2>Price: ${price} ${result.prices.currency_code}</h2>
                                         <p style="color: ${saleFont}">${saleMessage}</p></div>
                                         <div class="cartbuyheart">
                                         <button class="cart" aria-label="Add to cart button" title="Add to cart button">
-                                        <i class="fa-solid fa-cart-plus fa-2xl gamecart" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
+                                        <i class="fa-solid fa-cart-plus fa-2xl gamecart" data-id="${result.id}" data-name="${result.name}" data-image="${result.images[0].src}" data-price="${price}"></i>
                                         </button>
                                         <button class="heart" aria-label="Add to wishlist button" title="Add to wishlist button">
-                                        <i class="${cssClass} fa-heart fa-2xl gameheart" data-id="${result.id}" data-name="${result.title}" data-image="${result.image}" data-price="${result.price}"></i>
+                                        <i class="${cssClass} fa-heart fa-2xl gameheart" data-id="${result.id}" data-name="${result.name}" data-image="${result.images[0].src}" data-price="${price}"></i>
                                         </button>
                                         <a href="cart.html" class="buy">
                                         <b>View cart</b>
@@ -83,7 +82,7 @@ async function getGame() {
                                     <p class="added-to-cart"></p>
                                     </div>
                                 `;
-
+{/* <p class="released">Released: ${result.released}</p> */}
 // Cart icon
         const cartButton = document.querySelector(".productpagecontainer i.fa-cart-plus");
         cartButton.addEventListener("click", cartIconChange);

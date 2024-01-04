@@ -40,8 +40,8 @@ let total = 0;
 itemsInCart.forEach(inCart => {
 
 productContainer.innerHTML += `<div class="checkout-item">
-                                <img src="${inCart.image}" alt="${inCart.title} cover" class="checkout-img">
-                                <p><b>Title:</b>${inCart.title}</p>
+                                <img src="${inCart.image}" alt="${inCart.name} cover" class="checkout-img">
+                                <p><b>Title:</b>${inCart.name}</p>
                                 <p><b>Price:</b>${inCart.price}</p>
                                 </div>`;
 
@@ -52,7 +52,7 @@ productContainer.innerHTML += `<div class="checkout-item">
 total = total.toFixed(2);
 
 totalSum.innerHTML =    `<h4>Total sum:</h4>
-                        <p>$${total}</p>`;
+                        <p>${total} NOK</p>`;
 
 
 } catch (error) {

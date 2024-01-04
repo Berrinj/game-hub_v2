@@ -58,13 +58,13 @@ itemsInCart.forEach(inCart => {
                                         <div class="cartItem-container" data-game-id="${inCart.id}">
                                         <a href="productpage.html?id=${inCart.id}" aria-label="product link" title="product link">
                                         <div class="cartinfo">
-                                        <img src="${inCart.image}" alt="${inCart.title} cover"></a>
-                                        <h2>${inCart.title}</h2>
+                                        <img src="${inCart.image}" alt="${inCart.name} cover"></a>
+                                        <h2>${inCart.name}</h2>
                                         <p>-Available for PS4, PS5, Nintendo Switch, XBOX One & XBOXSeries X</p>
                                         <p>-Instant download</p>
                                         </p>
-                                        <p class="price">Price: $${inCart.price}</p>
-                                        <button class="deleteitem"><i class="fa-regular fa-trash-can"></i>Remove ${inCart.title}</button>
+                                        <p class="price">Price: ${inCart.price} NOK</p>
+                                        <button class="deleteitem"><i class="fa-regular fa-trash-can"></i>Remove ${inCart.name}</button>
                                     </div>
                                     </div>
                                     </li>`;
@@ -77,7 +77,7 @@ itemsInCart.forEach(inCart => {
 total = total.toFixed(2);
 
 totalSum.innerHTML =    `<h3>Total</h3>
-                        <h3>$${total}</h3>`;
+                        <h3>${total} NOK</h3>`;
 
 
 

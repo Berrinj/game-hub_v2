@@ -591,10 +591,11 @@ select#sort-games-by {
 }
 
 .price-box {
-  width: 63px;
+  width: auto;
   background-color: var(--main-color-two);
   margin: 8px;
   padding: 0 5px 0 5px;
+  display: inline-block;
 }
 
 .add-to-wishlist {
